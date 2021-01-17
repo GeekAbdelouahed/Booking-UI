@@ -18,7 +18,9 @@ class _GetStartedPageState extends State<GetStartedPage> {
   }
 
   void _createAccount() {
-    Navigator.of(context).pushNamed('');
+    Navigator.of(context).pushNamed(
+      AppRoutes.signUp,
+    );
   }
 
   final _imagesPages = [

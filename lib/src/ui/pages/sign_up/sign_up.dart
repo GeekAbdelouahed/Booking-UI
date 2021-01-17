@@ -5,12 +5,12 @@ import '../../../utils/styles.dart';
 import '../../components/social.dart';
 import 'widgets/form.dart';
 
-class LoginPage extends StatefulWidget {
+class SignUpPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _SignUpPageState createState() => _SignUpPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
@@ -24,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'Log in',
+                  'Sign up',
                   style: AppStyles.titleStyle,
                 ),
                 const SizedBox(
@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
                       width: 10,
                     ),
                     Text(
-                      'or log in with email',
+                      'or sign up with email',
                       style: AppStyles.subtitleStyle.copyWith(
                         color: Colors.grey[600],
                       ),
@@ -76,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                       width: 10,
                     ),
                     Text(
-                      'Don\'t have an account?',
+                      'Already have account?',
                       style: AppStyles.subtitleStyle.copyWith(
                         color: Colors.grey[500],
                       ),
@@ -86,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).pushNamed(AppRoutes.signUp);
+                        Navigator.of(context).pushNamed(AppRoutes.login);
                       },
                       child: Text(
                         'Sign up',
