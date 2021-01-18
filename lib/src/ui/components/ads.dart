@@ -33,7 +33,7 @@ class AdsItemWidget extends StatelessWidget {
               PositionedDirectional(
                 start: 35,
                 bottom: 35,
-                end: 100,
+                end: 35,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,

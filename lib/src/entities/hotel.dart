@@ -7,7 +7,7 @@ class Hotel {
   final String subtitle;
   final String description;
   final List<String> photos;
-  final double price;
+  final int price;
   final Rating rating;
   final String country;
   final String city;

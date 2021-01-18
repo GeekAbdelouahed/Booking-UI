@@ -8,7 +8,7 @@ class SliderAdsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => CarouselSlider(
         options: CarouselOptions(
-          height: MediaQuery.of(context).size.height * .6,
+          height: MediaQuery.of(context).size.height * .5,
           viewportFraction: 0.85,
           enlargeCenterPage: true,
         ),

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'widgets/ads.dart';
 import 'widgets/categories.dart';
+import 'widgets/destinations.dart';
 import 'widgets/search.dart';
+import 'widgets/deals.dart';
 
 class ExplorePage extends StatefulWidget {
   @override
@@ -24,7 +26,7 @@ class _ExplorePageState extends State<ExplorePage>
             ),
           ),
           SliverPadding(
-            padding: const EdgeInsets.only(bottom: 20),
+            padding: const EdgeInsets.only(bottom: 30),
             sliver: SliverToBoxAdapter(
               child: SizedBox(
                 height: 100,
@@ -33,9 +35,21 @@ class _ExplorePageState extends State<ExplorePage>
             ),
           ),
           SliverPadding(
-            padding: const EdgeInsets.only(bottom: 20),
+            padding: const EdgeInsets.only(bottom: 30),
             sliver: SliverToBoxAdapter(
               child: SliderAdsWidget(),
+            ),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.only(bottom: 30),
+            sliver: SliverToBoxAdapter(
+              child: PopularDestinationsWidget(),
+            ),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.only(bottom: 30),
+            sliver: SliverToBoxAdapter(
+              child: BestDealsWidget(),
             ),
           ),
         ],
