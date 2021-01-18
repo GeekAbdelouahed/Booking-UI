@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../routes/routes.dart';
 import '../../components/buttons/rounded_button.dart';
+import '../../components/indicator.dart';
 import 'widgets/page.dart';
 
 class GetStartedPage extends StatefulWidget {
@@ -55,15 +55,9 @@ class _GetStartedPageState extends State<GetStartedPage> {
                 height: 30,
               ),
               Center(
-                child: SmoothPageIndicator(
+                child: AppIndicator(
                   controller: _pageController,
                   count: _imagesPages.length,
-                  effect: WormEffect(
-                    activeDotColor: Theme.of(context).primaryColor,
-                    dotColor: Colors.grey[300],
-                    dotHeight: 10,
-                    dotWidth: 10,
-                  ),
                 ),
               ),
               const Spacer(),

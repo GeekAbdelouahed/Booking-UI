@@ -6,7 +6,7 @@ import '../../../../routes/routes.dart';
 import '../../../../utils/extensions.dart';
 import '../../../components/buttons/rounded_button.dart';
 import '../../../components/dialogs/waiting.dart';
-import '../../../components/fields/rounded_outline_text_field.dart';
+import '../../../components/fields/form_field.dart';
 import 'terms.dart';
 
 class FormWidget extends StatefulWidget {
@@ -50,7 +50,7 @@ class _FormWidgetState extends State<FormWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            AppRoundedOutlineTextFormField(
+            AppFormField(
               hint: 'First Name',
               controller: _firstNameController,
               textInputAction: TextInputAction.next,
@@ -62,7 +62,7 @@ class _FormWidgetState extends State<FormWidget> {
             const SizedBox(
               height: 30,
             ),
-            AppRoundedOutlineTextFormField(
+            AppFormField(
               hint: 'Last Name',
               controller: _lastNameController,
               textInputAction: TextInputAction.next,
@@ -74,7 +74,7 @@ class _FormWidgetState extends State<FormWidget> {
             const SizedBox(
               height: 30,
             ),
-            AppRoundedOutlineTextFormField(
+            AppFormField(
               hint: 'Email',
               controller: _emailController,
               keyboardType: TextInputType.emailAddress,
@@ -88,7 +88,7 @@ class _FormWidgetState extends State<FormWidget> {
             const SizedBox(
               height: 30,
             ),
-            AppRoundedOutlineTextFormField(
+            AppFormField(
               obscureText: true,
               hint: 'Password',
               controller: _passwordController,
@@ -102,7 +102,7 @@ class _FormWidgetState extends State<FormWidget> {
             const SizedBox(
               height: 30,
             ),
-            AppRoundedOutlineTextFormField(
+            AppFormField(
               obscureText: true,
               hint: 'Confirm Password',
               controller: _confirmPasswordController,

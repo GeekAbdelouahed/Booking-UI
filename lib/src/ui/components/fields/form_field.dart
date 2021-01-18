@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../utils/styles.dart';
 
-class AppRoundedOutlineTextFormField extends StatefulWidget {
+class AppFormField extends StatefulWidget {
   final TextEditingController controller;
   final IconData prefixIcon;
   final String hint;
@@ -14,7 +14,7 @@ class AppRoundedOutlineTextFormField extends StatefulWidget {
   final int maxLines;
   final String Function(String) validator;
 
-  const AppRoundedOutlineTextFormField({
+  const AppFormField({
     Key key,
     this.controller,
     this.prefixIcon,
@@ -28,12 +28,12 @@ class AppRoundedOutlineTextFormField extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _AppRoundedOutlineTextFormFieldState createState() =>
-      _AppRoundedOutlineTextFormFieldState();
+  _AppFormFieldState createState() =>
+      _AppFormFieldState();
 }
 
-class _AppRoundedOutlineTextFormFieldState
-    extends State<AppRoundedOutlineTextFormField> {
+class _AppFormFieldState
+    extends State<AppFormField> {
   bool _isObscureText;
 
   @override

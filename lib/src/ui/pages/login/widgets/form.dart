@@ -7,7 +7,7 @@ import '../../../../utils/extensions.dart';
 import '../../../../utils/styles.dart';
 import '../../../components/buttons/rounded_button.dart';
 import '../../../components/dialogs/waiting.dart';
-import '../../../components/fields/rounded_outline_text_field.dart';
+import '../../../components/fields/form_field.dart';
 
 class FormWidget extends StatefulWidget {
   @override
@@ -50,7 +50,7 @@ class _FormWidgetState extends State<FormWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            AppRoundedOutlineTextFormField(
+            AppFormField(
               hint: 'Email',
               controller: _emailController,
               keyboardType: TextInputType.emailAddress,
@@ -64,7 +64,7 @@ class _FormWidgetState extends State<FormWidget> {
             const SizedBox(
               height: 30,
             ),
-            AppRoundedOutlineTextFormField(
+            AppFormField(
               obscureText: true,
               hint: 'Password',
               controller: _passwordController,
