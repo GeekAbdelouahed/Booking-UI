@@ -5,12 +5,12 @@ import 'buttons/rounded_button.dart';
 
 class SocialWidget extends StatelessWidget {
   final VoidCallback onPressedFacebook;
-  final VoidCallback onPressedTwitter;
+  final VoidCallback onPressedGoogle;
 
   const SocialWidget({
     Key key,
     this.onPressedFacebook,
-    this.onPressedTwitter,
+    this.onPressedGoogle,
   }) : super(key: key);
 
   @override
@@ -35,15 +35,15 @@ class SocialWidget extends StatelessWidget {
           ),
           Expanded(
             child: AppRoundedButton(
-              onPressed: onPressedTwitter,
+              onPressed: onPressedGoogle,
               padding: const EdgeInsets.symmetric(vertical: 15),
-              color: const Color(0xff03aaee),
+              color: const Color(0xffDB4437),
               icon: Icon(
-                FontAwesomeIcons.twitter,
+                FontAwesomeIcons.google,
                 color: Colors.white,
                 size: 15,
               ),
-              title: 'Twitter',
+              title: 'Google',
               textColor: Colors.white,
             ),
           ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../../utils/styles.dart';
+
 class AppRoundedOutlineTextFormField extends StatefulWidget {
   final TextEditingController controller;
   final IconData prefixIcon;
@@ -41,14 +43,17 @@ class _AppRoundedOutlineTextFormFieldState
   }
 
   @override
-  Widget build(BuildContext context) => Material(
-        elevation: 3,
-        shadowColor: Colors.black87,
-        clipBehavior: Clip.antiAlias,
-        borderRadius: BorderRadius.circular(widget.borderRadius),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-          child: TextFormField(
+  Widget build(BuildContext context) => Stack(
+        children: [
+          if (widget.hint?.isNotEmpty ?? false)
+            Text(
+              widget.hint,
+              style: AppStyles.subtitleStyle.copyWith(
+                color: Colors.grey[600],
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          TextFormField(
             validator: widget.validator,
             controller: widget.controller,
             obscureText: _isObscureText,
@@ -56,14 +61,13 @@ class _AppRoundedOutlineTextFormFieldState
             keyboardType: widget.keyboardType,
             maxLines: widget.maxLines,
             decoration: InputDecoration(
+              contentPadding: const EdgeInsets.only(top: 20, bottom: 10),
               prefixIcon:
                   (widget.prefixIcon == null) ? null : Icon(widget.prefixIcon),
               suffixIcon: widget.obscureText ? _buildObscureIcon() : null,
-              hintText: widget.hint,
-              border: InputBorder.none,
             ),
           ),
-        ),
+        ],
       );
 
   Widget _buildObscureIcon() => InkWell(

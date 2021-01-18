@@ -5,12 +5,7 @@ import '../../../utils/styles.dart';
 import '../../components/social.dart';
 import 'widgets/form.dart';
 
-class LoginPage extends StatefulWidget {
-  @override
-  _LoginPageState createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
+class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
@@ -30,10 +25,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 30,
                 ),
-                SocialWidget(
-                  onPressedFacebook: () {},
-                  onPressedTwitter: () {},
-                ),
+                FormWidget(),
                 const SizedBox(
                   height: 30,
                 ),
@@ -46,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
                       width: 10,
                     ),
                     Text(
-                      'or log in with email',
+                      'OR',
                       style: AppStyles.subtitleStyle.copyWith(
                         color: Colors.grey[600],
                       ),
@@ -62,7 +54,10 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 30,
                 ),
-                FormWidget(),
+                SocialWidget(
+                  onPressedFacebook: () {},
+                  onPressedGoogle: () {},
+                ),
                 const SizedBox(
                   height: 30,
                 ),

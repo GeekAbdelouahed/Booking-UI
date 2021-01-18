@@ -1,7 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
+import '../../../../routes/routes.dart';
+import '../../../../utils/extensions.dart';
 import '../../../../utils/styles.dart';
 import '../../../components/buttons/rounded_button.dart';
+import '../../../components/dialogs/waiting.dart';
 import '../../../components/fields/rounded_outline_text_field.dart';
 
 class FormWidget extends StatefulWidget {
@@ -10,24 +15,64 @@ class FormWidget extends StatefulWidget {
 }
 
 class _FormWidgetState extends State<FormWidget> {
-  void _validateForm() {}
+  final _formKey = GlobalKey<FormState>();
 
-  void _forgotPassword() {}
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  void _validateForm() {
+    bool isFormValid = _formKey.currentState.validate();
+    if (!isFormValid) return;
+    print('email: ${_emailController.text}');
+    print('password: ${_passwordController.text}');
+
+    context.showAppDialog(
+      isDismissible: false,
+      child: AppDialogWaiting(),
+    );
+
+    Timer(const Duration(seconds: 5), () {
+      Navigator.of(context).pushNamedAndRemoveUntil(
+        AppRoutes.home,
+        ModalRoute.withName(''),
+      );
+    });
+  }
+
+  void _forgotPassword() {
+    // TODO navigate to forgot password screen
+    print('Forgot password');
+  }
 
   @override
   Widget build(BuildContext context) => Form(
+        key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             AppRoundedOutlineTextFormField(
-              hint: 'Your Email',
+              hint: 'Email',
+              controller: _emailController,
+              keyboardType: TextInputType.emailAddress,
+              textInputAction: TextInputAction.next,
+              validator: (text) {
+                if (text?.isEmpty ?? true) return 'Field required!';
+                if (!text.isValidEmail) return 'Email invalid!';
+                return null;
+              },
             ),
             const SizedBox(
-              height: 15,
+              height: 30,
             ),
             AppRoundedOutlineTextFormField(
               obscureText: true,
               hint: 'Password',
+              controller: _passwordController,
+              validator: (text) {
+                if (text?.isEmpty ?? true) return 'Field required!';
+                if (!text.isValidPassword) return 'Password invalid!';
+                return null;
+              },
             ),
             const SizedBox(
               height: 30,
@@ -54,4 +99,11 @@ class _FormWidgetState extends State<FormWidget> {
           ],
         ),
       );
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 }
