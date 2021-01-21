@@ -10,8 +10,11 @@ class BestDealsWidget extends StatelessWidget {
         delegate: SliverChildBuilderDelegate(
           (_, index) => index == 0 // Header
               ? Padding(
-                  padding:
-                      const EdgeInsets.only(left: 30, right: 30, bottom: 20),
+                  padding: const EdgeInsets.only(
+                    left: 30,
+                    right: 30,
+                    bottom: 20,
+                  ),
                   child: Text(
                     'Best Deals',
                     style: AppStyles.titleStyle.copyWith(
@@ -21,9 +24,10 @@ class BestDealsWidget extends StatelessWidget {
                 )
               : FittedBox(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 30,
-                      vertical: 10,
+                    padding: EdgeInsets.only(
+                      left: 30,
+                      right: 30,
+                      bottom: index < AppDeals.data.length ? 10 : 0,
                     ),
                     child: DealItemWidget(
                       hotel: AppDeals.data[index - 1],

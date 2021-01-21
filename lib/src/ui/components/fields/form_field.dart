@@ -13,6 +13,7 @@ class AppFormField extends StatefulWidget {
   final double borderRadius;
   final int maxLines;
   final String Function(String) validator;
+  final String initialValue;
 
   const AppFormField({
     Key key,
@@ -25,15 +26,14 @@ class AppFormField extends StatefulWidget {
     this.borderRadius = 30,
     this.maxLines = 1,
     this.validator,
+    this.initialValue,
   }) : super(key: key);
 
   @override
-  _AppFormFieldState createState() =>
-      _AppFormFieldState();
+  _AppFormFieldState createState() => _AppFormFieldState();
 }
 
-class _AppFormFieldState
-    extends State<AppFormField> {
+class _AppFormFieldState extends State<AppFormField> {
   bool _isObscureText;
 
   @override
@@ -54,6 +54,7 @@ class _AppFormFieldState
               ),
             ),
           TextFormField(
+            initialValue: widget.initialValue,
             validator: widget.validator,
             controller: widget.controller,
             obscureText: _isObscureText,
@@ -61,7 +62,7 @@ class _AppFormFieldState
             keyboardType: widget.keyboardType,
             maxLines: widget.maxLines,
             decoration: InputDecoration(
-              contentPadding: const EdgeInsets.only(top: 20, bottom: 10),
+              contentPadding: const EdgeInsets.only(top: 25, bottom: 10),
               prefixIcon:
                   (widget.prefixIcon == null) ? null : Icon(widget.prefixIcon),
               suffixIcon: widget.obscureText ? _buildObscureIcon() : null,

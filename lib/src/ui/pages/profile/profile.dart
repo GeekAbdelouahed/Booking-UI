@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../routes/routes.dart';
 import '../../../utils/styles.dart';
 import '../../components/image.dart';
 import 'widgets/item.dart';
@@ -18,7 +19,9 @@ class _ProfilePageState extends State<ProfilePage>
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
       children: [
         InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).pushNamed(AppRoutes.editProfile);
+          },
           child: Row(
             children: [
               Expanded(
@@ -26,7 +29,7 @@ class _ProfilePageState extends State<ProfilePage>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Abdelouahed',
+                      'Abdelouahed Medjoudja',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: AppStyles.titleStyle.copyWith(

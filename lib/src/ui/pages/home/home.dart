@@ -38,6 +38,7 @@ class _HomePageState extends State<HomePage>
               indicatorColor: Colors.transparent,
               unselectedLabelColor: Colors.grey[500],
               labelColor: Theme.of(context).primaryColor,
+              labelStyle: Theme.of(context).textTheme.button,
               tabs: [
                 Tab(
                   iconMargin: const EdgeInsets.all(5),

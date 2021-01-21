@@ -19,6 +19,7 @@ class TabBarWidget extends StatelessWidget {
           indicatorColor: Colors.transparent,
           unselectedLabelColor: Colors.grey[500],
           labelColor: Theme.of(context).primaryColor,
+          labelStyle: Theme.of(context).textTheme.button,
           tabs: [
             Tab(
               text: 'Upcoming',
