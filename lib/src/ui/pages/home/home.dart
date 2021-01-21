@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../explore/explore.dart';
+import '../favorites/favorites.dart';
+import '../profile/profile.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -23,8 +25,8 @@ class _HomePageState extends State<HomePage>
           controller: _tabController,
           children: [
             ExplorePage(),
-            ExplorePage(),
-            ExplorePage(),
+            FavoritesPage(),
+            ProfilePage(),
           ],
         ),
         bottomNavigationBar: Material(
@@ -49,7 +51,7 @@ class _HomePageState extends State<HomePage>
                   Icons.favorite_border,
                   size: 25,
                 ),
-                text: 'Trips',
+                text: 'Favorites',
               ),
               Tab(
                 iconMargin: const EdgeInsets.all(5),

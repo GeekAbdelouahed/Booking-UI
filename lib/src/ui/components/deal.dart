@@ -11,109 +11,113 @@ class DealItemWidget extends StatelessWidget {
   const DealItemWidget({Key key, @required this.hotel}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => Card(
-        elevation: 5,
-        clipBehavior: Clip.antiAlias,
-        margin: const EdgeInsets.all(0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            AspectRatio(
-              aspectRatio: 1,
-              child: AppImage(
-                url: hotel.photos[0],
+  Widget build(BuildContext context) => SizedBox(
+    height: 150,
+    child: Card(
+          elevation: 10,
+          shadowColor: Colors.black.withOpacity(.2),
+          clipBehavior: Clip.antiAlias,
+          margin: const EdgeInsets.all(0),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              AspectRatio(
+                aspectRatio: 1,
+                child: AppImage(
+                  url: hotel.photos[0],
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    hotel.title,
-                    style: AppStyles.titleStyle.copyWith(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w900,
+              Padding(
+                padding: const EdgeInsets.all(15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      hotel.title,
+                      style: AppStyles.titleStyle.copyWith(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    '${hotel.city}, ${hotel.country}',
-                    style: AppStyles.subtitleStyle.copyWith(
-                      color: Colors.grey[400],
-                      fontSize: 13,
-                      fontWeight: FontWeight.w600,
+                    const SizedBox(
+                      height: 5,
                     ),
-                  ),
-                  const Spacer(),
-                  Row(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Icon(
-                                Icons.location_pin,
-                                color: Theme.of(context).primaryColor,
-                                size: 18,
-                              ),
-                              const SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                '2 Km to city',
-                                style: AppStyles.subtitleStyle.copyWith(
-                                  color: Colors.grey[400],
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w600,
+                    Text(
+                      '${hotel.city}, ${hotel.country}',
+                      style: AppStyles.subtitleStyle.copyWith(
+                        color: Colors.grey[400],
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const Spacer(),
+                    Row(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Icon(
+                                  Icons.location_pin,
+                                  color: Theme.of(context).primaryColor,
+                                  size: 18,
                                 ),
+                                const SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  '2 Km to city',
+                                  style: AppStyles.subtitleStyle.copyWith(
+                                    color: Colors.grey[400],
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            AppRatingBar(
+                              initialRating: hotel.rating.overallRating,
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          width: 30,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(
+                              '\$${hotel.price}',
+                              style: AppStyles.titleStyle.copyWith(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w900,
                               ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          AppRatingBar(
-                            initialRating: hotel.rating.overallRating,
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        width: 30,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text(
-                            '\$${hotel.price}',
-                            style: AppStyles.titleStyle.copyWith(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w900,
                             ),
-                          ),
-                          Text(
-                            '/per night',
-                            style: AppStyles.titleStyle.copyWith(
-                              color: Colors.grey[800],
-                              fontSize: 13,
-                              fontWeight: FontWeight.w600,
+                            Text(
+                              '/per night',
+                              style: AppStyles.titleStyle.copyWith(
+                                color: Colors.grey[800],
+                                fontSize: 13,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      );
+  );
 }
