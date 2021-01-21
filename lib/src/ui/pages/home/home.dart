@@ -31,37 +31,37 @@ class _HomePageState extends State<HomePage>
         ),
         bottomNavigationBar: Material(
           elevation: 10,
-          child: TabBar(
-            controller: _tabController,
-            indicatorColor: Colors.transparent,
-            unselectedLabelColor: Colors.grey[500],
-            labelColor: Theme.of(context).primaryColor,
-            tabs: [
-              Tab(
-                iconMargin: const EdgeInsets.all(5),
-                icon: Icon(
-                  Icons.search,
-                  size: 25,
+          child: SizedBox(
+            height: 60,
+            child: TabBar(
+              controller: _tabController,
+              indicatorColor: Colors.transparent,
+              unselectedLabelColor: Colors.grey[500],
+              labelColor: Theme.of(context).primaryColor,
+              tabs: [
+                Tab(
+                  iconMargin: const EdgeInsets.all(5),
+                  icon: Icon(
+                    Icons.search,
+                  ),
+                  text: 'Explore',
                 ),
-                text: 'Explore',
-              ),
-              Tab(
-                iconMargin: const EdgeInsets.all(5),
-                icon: Icon(
-                  Icons.favorite_border,
-                  size: 25,
+                Tab(
+                  iconMargin: const EdgeInsets.all(5),
+                  icon: Icon(
+                    Icons.favorite_border,
+                  ),
+                  text: 'Favorites',
                 ),
-                text: 'Favorites',
-              ),
-              Tab(
-                iconMargin: const EdgeInsets.all(5),
-                icon: Icon(
-                  Icons.person_outline,
-                  size: 25,
-                ),
-                text: 'Profile',
-              )
-            ],
+                Tab(
+                  iconMargin: const EdgeInsets.all(5),
+                  icon: Icon(
+                    Icons.person_outline,
+                  ),
+                  text: 'Profile',
+                )
+              ],
+            ),
           ),
         ),
       );

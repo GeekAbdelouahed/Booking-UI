@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'widgets/ads.dart';
-import 'widgets/categories.dart';
 import 'widgets/deals.dart';
 import 'widgets/destinations.dart';
 import 'widgets/search.dart';
@@ -16,42 +15,37 @@ class _ExplorePageState extends State<ExplorePage>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return SafeArea(
-      child: CustomScrollView(
-        slivers: [
-          SliverPadding(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-            sliver: SliverToBoxAdapter(
-              child: SearchWidget(),
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height * .7,
+            child: Stack(
+              children: [
+                Positioned.fill(
+                  child: SliderAdsWidget(),
+                ),
+                Positioned(
+                  top: 50,
+                  left: 30,
+                  right: 30,
+                  child: SearchWidget(),
+                ),
+              ],
             ),
           ),
-          SliverPadding(
-            padding: const EdgeInsets.only(bottom: 30),
-            sliver: SliverToBoxAdapter(
-              child: SizedBox(
-                height: 100,
-                child: CategoriesWidget(),
-              ),
-            ),
+        ),
+        SliverPadding(
+          padding: const EdgeInsets.only(top: 30, bottom: 30),
+          sliver: SliverToBoxAdapter(
+            child: PopularDestinationsWidget(),
           ),
-          SliverPadding(
-            padding: const EdgeInsets.only(bottom: 30),
-            sliver: SliverToBoxAdapter(
-              child: SliderAdsWidget(),
-            ),
-          ),
-          SliverPadding(
-            padding: const EdgeInsets.only(bottom: 30),
-            sliver: SliverToBoxAdapter(
-              child: PopularDestinationsWidget(),
-            ),
-          ),
-          SliverPadding(
-            padding: const EdgeInsets.only(bottom: 30),
-            sliver: BestDealsWidget(),
-          ),
-        ],
-      ),
+        ),
+        SliverPadding(
+          padding: const EdgeInsets.only(bottom: 30),
+          sliver: BestDealsWidget(),
+        ),
+      ],
     );
   }
 

@@ -12,7 +12,7 @@ class FavoritesPage extends StatefulWidget {
 }
 
 class _FavoritesPageState extends State<FavoritesPage>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   TabController _controller;
 
   @override
@@ -22,35 +22,41 @@ class _FavoritesPageState extends State<FavoritesPage>
   }
 
   @override
-  Widget build(BuildContext context) => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(
-            height: 20,
+  Widget build(BuildContext context) {
+    super.build(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(
+          height: 20,
+        ),
+        Padding(
+          padding: const EdgeInsets.all(30),
+          child: Text(
+            'Favorites',
+            style: AppStyles.titleStyle,
           ),
-          Padding(
-            padding: const EdgeInsets.all(30),
-            child: Text(
-              'Favorites',
-              style: AppStyles.titleStyle,
-            ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          child: TabBarWidget(
+            controller: _controller,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: TabBarWidget(
-              controller: _controller,
-            ),
+        ),
+        Expanded(
+          child: TabBarView(
+            controller: _controller,
+            children: [
+              UpcomingWidget(),
+              FinishedWidget(),
+              FavoritesWidget(),
+            ],
           ),
-          Expanded(
-            child: TabBarView(
-              controller: _controller,
-              children: [
-                UpcomingWidget(),
-                FinishedWidget(),
-                FavoritesWidget(),
-              ],
-            ),
-          ),
-        ],
-      );
+        ),
+      ],
+    );
+  }
+
+  @override
+  bool get wantKeepAlive => true;
 }

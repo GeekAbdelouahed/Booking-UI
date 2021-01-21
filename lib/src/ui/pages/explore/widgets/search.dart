@@ -8,6 +8,7 @@ class SearchWidget extends StatelessWidget {
   Widget build(BuildContext context) => Card(
         elevation: 5,
         clipBehavior: Clip.antiAlias,
+        shadowColor: Colors.black.withOpacity(.2),
         margin: const EdgeInsets.all(0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
