@@ -61,7 +61,7 @@ class MyTripItemWidget extends StatelessWidget {
                                     height: 5,
                                   ),
                                   Text(
-                                    '${hotel.city}, ${hotel.country}',
+                                    '${hotel.address.city.name}, ${hotel.address.country.name}',
                                     style: AppStyles.subtitleStyle.copyWith(
                                       color: Colors.grey[400],
                                       fontSize: 13,

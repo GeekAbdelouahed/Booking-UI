@@ -12,6 +12,8 @@ class RatingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Card(
+        elevation: 5,
+        shadowColor: Colors.grey[100],
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../../../entities/hotel.dart';
+import '../../components/buttons/rounded_button.dart';
 import 'widgets/app_bar.dart';
 import 'widgets/information.dart';
+import 'widgets/map.dart';
 import 'widgets/rating.dart';
+import 'widgets/review.dart';
 
 class HotelPage extends StatelessWidget {
   final Hotel hotel;
@@ -38,6 +41,42 @@ class HotelPage extends StatelessWidget {
                 ),
                 child: RatingWidget(
                   rating: hotel.rating,
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 30,
+                  right: 30,
+                  bottom: 20,
+                ),
+                child: ReviewsWidget(
+                  reviews: hotel.reviews,
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  bottom: 20,
+                ),
+                child: MapWidget(
+                  latitude: hotel.address.latitude,
+                  longitude: hotel.address.longitude,
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 30,
+                  right: 30,
+                  bottom: 20,
+                ),
+                child: AppRoundedButton(
+                  onPressed: () {},
+                  title: 'Book now',
                 ),
               ),
             ),

@@ -1,12 +1,21 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import '../../../../entities/hotel.dart';
 import '../../../../utils/styles.dart';
 
-class InformationWidget extends StatelessWidget {
+class InformationWidget extends StatefulWidget {
   final Hotel hotel;
 
   const InformationWidget({Key key, @required this.hotel}) : super(key: key);
+
+  @override
+  _InformationWidgetState createState() => _InformationWidgetState();
+}
+
+class _InformationWidgetState extends State<InformationWidget> {
+  bool _isReadMore = false;
 
   @override
   Widget build(BuildContext context) => Column(
@@ -23,7 +32,7 @@ class InformationWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        hotel.title,
+                        widget.hotel.title,
                         style: AppStyles.titleStyle,
                       ),
                       const SizedBox(
@@ -32,7 +41,7 @@ class InformationWidget extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            '${hotel.city}, ${hotel.country}',
+                            '${widget.hotel.address.city.name}, ${widget.hotel.address.country.name}',
                             style: AppStyles.subtitleStyle.copyWith(
                               color: Colors.grey[500],
                               fontSize: 13,
@@ -69,7 +78,7 @@ class InformationWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    '\$${hotel.price}',
+                    '\$${widget.hotel.price}',
                     style: AppStyles.titleStyle.copyWith(
                       fontSize: 20,
                       fontWeight: FontWeight.w900,
@@ -100,11 +109,33 @@ class InformationWidget extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Text(
-            hotel.description,
-            style: const TextStyle(
-              height: 1.5,
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                _isReadMore = !_isReadMore;
+              });
+            },
+            child: RichText(
+              text: TextSpan(
+                text:
+                    '${widget.hotel.description.substring(0, _isReadMore ? null : 100)} ${_isReadMore ? '' : '...'}',
+                style: TextStyle(
+                  color: Colors.black87,
+                ),
+                children: [
+                  TextSpan(
+                    text: ' Read ${_isReadMore ? 'less' : 'more'}',
+                    style: AppStyles.titleStyle.copyWith(
+                      color: Theme.of(context).primaryColor,
+                      fontSize: 15,
+                    ),
+                  ),
+                ],
+              ),
             ),
+          ),
+          const SizedBox(
+            height: 30,
           ),
         ],
       );

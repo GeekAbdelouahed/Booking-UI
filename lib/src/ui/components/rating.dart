@@ -6,12 +6,14 @@ class AppRatingBar extends StatelessWidget {
   final Function(double) onRatingUpdate;
   final bool updateOnDrag;
   final double initialRating;
+  final double itemSize ;
 
   const AppRatingBar({
     Key key,
     this.onRatingUpdate,
     this.updateOnDrag = false,
     this.initialRating = 0,
+    this.itemSize = 15,
   }) : super(key: key);
 
   @override
@@ -22,7 +24,7 @@ class AppRatingBar extends StatelessWidget {
         },
         allowHalfRating: true,
         updateOnDrag: updateOnDrag,
-        itemSize: 15,
+        itemSize: itemSize,
         itemPadding: const EdgeInsets.symmetric(horizontal: 3),
         ratingWidget: RatingWidget(
           empty: Icon(

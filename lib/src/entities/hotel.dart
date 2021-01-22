@@ -1,3 +1,4 @@
+import 'address.dart';
 import 'rating.dart';
 import 'review.dart';
 
@@ -9,11 +10,8 @@ class Hotel {
   final List<String> photos;
   final int price;
   final Rating rating;
-  final String country;
-  final String city;
-  final double latitude;
-  final double longitude;
   final List<Review> reviews;
+  final Address address;
 
   Hotel({
     this.id,
@@ -23,10 +21,7 @@ class Hotel {
     this.photos,
     this.price,
     this.rating,
-    this.country,
-    this.city,
-    this.latitude,
-    this.longitude,
     this.reviews,
+    this.address,
   });
 }
