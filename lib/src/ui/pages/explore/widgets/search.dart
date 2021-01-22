@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../routes/routes.dart';
 import '../../../../utils/styles.dart';
 
 class SearchWidget extends StatelessWidget {
@@ -14,7 +15,9 @@ class SearchWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(30),
         ),
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).pushNamed(AppRoutes.search);
+          },
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 13),
             child: Row(
