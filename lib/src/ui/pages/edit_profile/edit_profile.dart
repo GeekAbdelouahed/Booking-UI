@@ -43,7 +43,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
             ),
             AppFormField(
               hint: 'Username',
-              controller: _userNameController..text = 'Abdelouahed Medjoudja',
+              controller: _userNameController..text = 'Ouahid Medjoudja',
               textInputAction: TextInputAction.next,
             ),
             const SizedBox(

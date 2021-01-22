@@ -29,7 +29,7 @@ class _ProfilePageState extends State<ProfilePage>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Abdelouahed Medjoudja',
+                      'Ouahid Medjoudja',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: AppStyles.titleStyle.copyWith(
@@ -47,6 +47,9 @@ class _ProfilePageState extends State<ProfilePage>
                     ),
                   ],
                 ),
+              ),
+              const SizedBox(
+                width: 10,
               ),
               AppImage(
                 url:

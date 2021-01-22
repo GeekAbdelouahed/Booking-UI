@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../dummy_data/deals.dart';
-import '../../../components/deal.dart';
+import '../../../components/my_trip.dart';
 
-class FavoritesWidget extends StatefulWidget {
+class UpcomingWidget extends StatefulWidget {
   @override
-  _FavoritesWidgetState createState() => _FavoritesWidgetState();
+  _UpcomingWidgetState createState() => _UpcomingWidgetState();
 }
 
-class _FavoritesWidgetState extends State<FavoritesWidget>
+class _UpcomingWidgetState extends State<UpcomingWidget>
     with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
@@ -16,10 +16,8 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
     return ListView.separated(
       padding: const EdgeInsets.all(30),
       itemCount: AppDeals.data.length,
-      itemBuilder: (_, index) => FittedBox(
-        child: DealItemWidget(
-          hotel: AppDeals.data[index],
-        ),
+      itemBuilder: (_, index) => MyTripItemWidget(
+        hotel: AppDeals.data[index],
       ),
       separatorBuilder: (_, __) => const SizedBox(
         height: 20,

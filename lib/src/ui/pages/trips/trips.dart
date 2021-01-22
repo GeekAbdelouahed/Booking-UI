@@ -6,19 +6,19 @@ import 'widgets/finished.dart';
 import 'widgets/tab_bar.dart';
 import 'widgets/upcoming.dart';
 
-class FavoritesPage extends StatefulWidget {
+class TripsPage extends StatefulWidget {
   @override
-  _FavoritesPageState createState() => _FavoritesPageState();
+  _TripsPageState createState() => _TripsPageState();
 }
 
-class _FavoritesPageState extends State<FavoritesPage>
+class _TripsPageState extends State<TripsPage>
     with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   TabController _controller;
 
   @override
   void initState() {
     super.initState();
-    _controller = TabController(vsync: this, length: 3, initialIndex: 2);
+    _controller = TabController(vsync: this, length: 3);
   }
 
   @override
@@ -33,7 +33,7 @@ class _FavoritesPageState extends State<FavoritesPage>
         Padding(
           padding: const EdgeInsets.all(30),
           child: Text(
-            'Favorites',
+            'My Trips',
             style: AppStyles.titleStyle,
           ),
         ),
