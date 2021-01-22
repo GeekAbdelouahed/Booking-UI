@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../dummy_data/deals.dart';
+import '../../../../../dummy_data/hotels.dart';
 import '../../../../utils/styles.dart';
 import '../../../components/deal.dart';
 
@@ -27,14 +27,14 @@ class BestDealsWidget extends StatelessWidget {
                     padding: EdgeInsets.only(
                       left: 30,
                       right: 30,
-                      bottom: index < AppDeals.data.length ? 10 : 0,
+                      bottom: index < AppHotels.data.length ? 10 : 0,
                     ),
                     child: DealItemWidget(
-                      hotel: AppDeals.data[index - 1],
+                      hotel: AppHotels.data[index - 1],
                     ),
                   ),
                 ),
-          childCount: AppDeals.data.length + 1,
+          childCount: AppHotels.data.length + 1,
         ),
       );
 }

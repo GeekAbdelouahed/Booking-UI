@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../dummy_data/ads.dart';
+import '../../../../../dummy_data/hotels.dart';
 import '../../../components/ads.dart';
 import '../../../components/indicator.dart';
 
@@ -13,7 +13,7 @@ class SliderAdsWidget extends StatelessWidget {
           Positioned.fill(
             child: PageView(
               controller: _controller,
-              children: AppAds.data
+              children: AppHotels.data
                   .map((hotel) => AdsItemWidget(hotel: hotel))
                   .toList(),
             ),
@@ -23,7 +23,7 @@ class SliderAdsWidget extends StatelessWidget {
             bottom: MediaQuery.of(context).size.width * .1,
             child: AppIndicator(
               controller: _controller,
-              count: AppAds.data.length,
+              count: AppHotels.data.length,
             ),
           )
         ],

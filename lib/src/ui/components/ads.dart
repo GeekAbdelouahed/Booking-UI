@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../entities/hotel.dart';
+import '../../routes/routes.dart';
 import '../../utils/styles.dart';
 import 'buttons/rounded_button.dart';
 import 'image.dart';
@@ -66,7 +67,12 @@ class AdsItemWidget extends StatelessWidget {
                     height: 10,
                   ),
                   AppRoundedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(
+                        AppRoutes.hotel,
+                        arguments: hotel,
+                      );
+                    },
                     padding: const EdgeInsets.symmetric(
                       horizontal: 25,
                       vertical: 5,

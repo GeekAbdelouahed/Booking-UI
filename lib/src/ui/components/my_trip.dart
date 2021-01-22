@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../entities/hotel.dart';
+import '../../routes/routes.dart';
 import '../../utils/styles.dart';
 import 'buttons/favorite.dart';
 import 'image.dart';
@@ -25,112 +26,120 @@ class MyTripItemWidget extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: AppImage(
-                        url: hotel.photos[0],
-                        width: double.infinity,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushNamed(
+                      AppRoutes.hotel,
+                      arguments: hotel,
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: AppImage(
+                          url: hotel.photos[0],
+                          width: double.infinity,
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                      Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    hotel.title,
+                                    style: AppStyles.titleStyle.copyWith(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    '${hotel.city}, ${hotel.country}',
+                                    style: AppStyles.subtitleStyle.copyWith(
+                                      color: Colors.grey[400],
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.location_pin,
+                                        color: Theme.of(context).primaryColor,
+                                        size: 18,
+                                      ),
+                                      const SizedBox(
+                                        width: 5,
+                                      ),
+                                      Text(
+                                        '2 Km to city',
+                                        style: AppStyles.subtitleStyle.copyWith(
+                                          color: Colors.grey[400],
+                                          fontSize: 13,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Row(
+                                    children: [
+                                      AppRatingBar(
+                                        initialRating:
+                                            hotel.rating.overallRating,
+                                      ),
+                                      const SizedBox(
+                                        width: 10,
+                                      ),
+                                      Text(
+                                        '80 Reviews',
+                                        style: AppStyles.subtitleStyle.copyWith(
+                                          color: Colors.grey[400],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Text(
-                                  hotel.title,
+                                  '\$${hotel.price}',
                                   style: AppStyles.titleStyle.copyWith(
-                                    fontSize: 18,
+                                    fontSize: 20,
                                     fontWeight: FontWeight.w900,
                                   ),
                                 ),
-                                const SizedBox(
-                                  height: 5,
-                                ),
                                 Text(
-                                  '${hotel.city}, ${hotel.country}',
+                                  '/per night',
                                   style: AppStyles.subtitleStyle.copyWith(
-                                    color: Colors.grey[400],
+                                    color: Colors.grey[500],
                                     fontSize: 13,
-                                    fontWeight: FontWeight.w600,
                                   ),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.location_pin,
-                                      color: Theme.of(context).primaryColor,
-                                      size: 18,
-                                    ),
-                                    const SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text(
-                                      '2 Km to city',
-                                      style: AppStyles.subtitleStyle.copyWith(
-                                        color: Colors.grey[400],
-                                        fontSize: 13,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                Row(
-                                  children: [
-                                    AppRatingBar(
-                                      initialRating: hotel.rating.overallRating,
-                                    ),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    Text(
-                                      '80 Reviews',
-                                      style: AppStyles.subtitleStyle.copyWith(
-                                        color: Colors.grey[400],
-                                      ),
-                                    ),
-                                  ],
                                 ),
                               ],
                             ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Text(
-                                '\$${hotel.price}',
-                                style: AppStyles.titleStyle.copyWith(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w900,
-                                ),
-                              ),
-                              Text(
-                                '/per night',
-                                style: AppStyles.titleStyle.copyWith(
-                                  color: Colors.grey[800],
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

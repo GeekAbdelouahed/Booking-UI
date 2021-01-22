@@ -24,7 +24,7 @@ class _AppFavoriteButtonState extends State<AppFavoriteButton> {
   }
 
   @override
-  Widget build(BuildContext context) => InkWell(
+  Widget build(BuildContext context) => GestureDetector(
         onTap: () {
           setState(() {
             _isFavorite = !_isFavorite;

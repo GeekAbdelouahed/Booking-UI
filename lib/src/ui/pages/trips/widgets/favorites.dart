@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../dummy_data/deals.dart';
+import '../../../../../dummy_data/hotels.dart';
 import '../../../components/my_trip.dart';
 
 class FavoritesWidget extends StatefulWidget {
@@ -15,9 +15,9 @@ class _FavoritesWidgetState extends State<FavoritesWidget>
     super.build(context);
     return ListView.separated(
       padding: const EdgeInsets.all(30),
-      itemCount: AppDeals.data.length,
+      itemCount: AppHotels.data.length,
       itemBuilder: (_, index) => MyTripItemWidget(
-        hotel: AppDeals.data[index],
+        hotel: AppHotels.data[index],
       ),
       separatorBuilder: (_, __) => const SizedBox(
         height: 20,

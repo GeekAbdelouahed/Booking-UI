@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../../dummy_data/deals.dart';
+import '../../../../dummy_data/hotels.dart';
 import '../../../utils/styles.dart';
 import '../../components/my_trip.dart';
 import 'widgets/search.dart';
@@ -80,13 +80,13 @@ class _SearchPageState extends State<SearchPage> {
                     left: 30,
                     right: 30,
                     top: index == 0 ? 0 : 10,
-                    bottom: index == AppDeals.data.length - 1 ? 10 : 0,
+                    bottom: index == AppHotels.data.length - 1 ? 10 : 0,
                   ),
                   child: MyTripItemWidget(
-                    hotel: AppDeals.data[index],
+                    hotel: AppHotels.data[index],
                   ),
                 ),
-                childCount: AppDeals.data.length,
+                childCount: AppHotels.data.length,
               ),
             ),
           ],
