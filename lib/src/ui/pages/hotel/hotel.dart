@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../../../entities/hotel.dart';
+import '../../../routes/routes.dart';
 import '../../components/buttons/rounded_button.dart';
 import 'widgets/app_bar.dart';
 import 'widgets/information.dart';
 import 'widgets/map.dart';
 import 'widgets/rating.dart';
-import 'widgets/review.dart';
+import 'widgets/reviews.dart';
 
 class HotelPage extends StatelessWidget {
   final Hotel hotel;
@@ -53,6 +54,12 @@ class HotelPage extends StatelessWidget {
                 ),
                 child: ReviewsWidget(
                   reviews: hotel.reviews,
+                  onViewAll: () {
+                    Navigator.of(context).pushNamed(
+                      AppRoutes.reviews,
+                      arguments: hotel,
+                    );
+                  },
                 ),
               ),
             ),

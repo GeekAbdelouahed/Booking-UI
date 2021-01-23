@@ -7,6 +7,7 @@ import '../ui/pages/get_started/get_started.dart';
 import '../ui/pages/home/home.dart';
 import '../ui/pages/hotel/hotel.dart';
 import '../ui/pages/login/login.dart';
+import '../ui/pages/reviews/reviews.dart';
 import '../ui/pages/search/search.dart';
 import '../ui/pages/sign_up/sign_up.dart';
 import '../ui/pages/welcome/welcome.dart';
@@ -49,6 +50,12 @@ abstract class AppRoutesGenerator {
       case AppRoutes.hotel:
         screen = args is Hotel
             ? HotelPage(hotel: args)
+            : _errorScreen(AppRoutes.hotel);
+        break;
+
+      case AppRoutes.reviews:
+        screen = args is Hotel
+            ? ReviewsPage(hotel: args)
             : _errorScreen(AppRoutes.hotel);
         break;
 

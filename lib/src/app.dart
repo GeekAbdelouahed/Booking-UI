@@ -15,6 +15,10 @@ class AppWidget extends StatelessWidget {
           textTheme: GoogleFonts.latoTextTheme(
             Theme.of(context).textTheme,
           ),
+          appBarTheme: AppBarTheme(
+            elevation: 0,
+            color: Colors.transparent,
+          ),
         ),
         onGenerateRoute: AppRoutesGenerator.generateRoute,
         initialRoute: AppRoutes.home,

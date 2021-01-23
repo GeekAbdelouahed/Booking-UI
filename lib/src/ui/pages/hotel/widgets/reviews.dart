@@ -6,8 +6,10 @@ import '../../../components/review.dart';
 
 class ReviewsWidget extends StatelessWidget {
   final List<Review> reviews;
+  final VoidCallback onViewAll;
 
-  const ReviewsWidget({Key key, @required this.reviews}) : super(key: key);
+  const ReviewsWidget({Key key, @required this.reviews, this.onViewAll})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) => Column(
@@ -23,7 +25,7 @@ class ReviewsWidget extends StatelessWidget {
               ),
               const Spacer(),
               InkWell(
-                onTap: () {},
+                onTap: onViewAll,
                 child: Text(
                   'View all',
                   style: TextStyle(
@@ -39,7 +41,7 @@ class ReviewsWidget extends StatelessWidget {
                 (review) => Column(
                   children: [
                     Divider(
-                      height: 50,
+                      height: 40,
                       color: Colors.grey[400],
                     ),
                     AppReviewWidget(
