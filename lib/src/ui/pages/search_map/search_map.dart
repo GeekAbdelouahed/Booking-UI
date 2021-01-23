@@ -1,29 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../dummy_data/hotels.dart';
-import '../../../routes/routes.dart';
 import '../../../utils/styles.dart';
-import '../../components/my_trip.dart';
+import 'widgets/map.dart';
 import 'widgets/search.dart';
 
-class SearchPage extends StatefulWidget {
+class SearchMapPage extends StatefulWidget {
   @override
-  _SearchPageState createState() => _SearchPageState();
+  _SearchMapPageState createState() => _SearchMapPageState();
 }
 
-class _SearchPageState extends State<SearchPage> {
+class _SearchMapPageState extends State<SearchMapPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           actions: [
             IconButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed(AppRoutes.searchMap);
-              },
-              tooltip: 'Map',
+              onPressed: () {},
+              tooltip: 'Filters',
               icon: Icon(
-                FontAwesomeIcons.mapMarkerAlt,
+                Icons.filter_list,
                 color: Colors.grey[800],
               ),
             ),
@@ -75,20 +71,9 @@ class _SearchPageState extends State<SearchPage> {
                 ),
               ),
             ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (_, index) => Padding(
-                  padding: EdgeInsets.only(
-                    left: 30,
-                    right: 30,
-                    top: index == 0 ? 0 : 10,
-                    bottom: index == AppHotels.data.length - 1 ? 10 : 0,
-                  ),
-                  child: MyTripItemWidget(
-                    hotel: AppHotels.data[index],
-                  ),
-                ),
-                childCount: AppHotels.data.length,
+            SliverFillRemaining(
+              child: MapWidget(
+                hotels: AppHotels.data,
               ),
             ),
           ],

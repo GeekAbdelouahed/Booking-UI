@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../entities/hotel.dart';
 import '../../routes/routes.dart';
@@ -8,15 +9,22 @@ import 'rating.dart';
 
 class DealItemWidget extends StatelessWidget {
   final Hotel hotel;
+  final double elevation;
+  final Color shadowColor;
 
-  const DealItemWidget({Key key, @required this.hotel}) : super(key: key);
+  const DealItemWidget({
+    Key key,
+    @required this.hotel,
+    this.elevation = 10,
+    this.shadowColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) => SizedBox(
         height: 150,
         child: Card(
-          elevation: 10,
-          shadowColor: Colors.black.withOpacity(.2),
+          elevation: elevation,
+          shadowColor: shadowColor ?? Colors.black.withOpacity(.2),
           clipBehavior: Clip.antiAlias,
           margin: const EdgeInsets.all(0),
           shape: RoundedRectangleBorder(
@@ -71,7 +79,7 @@ class DealItemWidget extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Icon(
-                                    Icons.location_pin,
+                                    FontAwesomeIcons.mapMarkerAlt,
                                     color: Theme.of(context).primaryColor,
                                     size: 18,
                                   ),

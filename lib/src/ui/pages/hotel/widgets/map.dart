@@ -39,7 +39,7 @@ class MapWidget extends StatelessWidget {
                     child: CircleAvatar(
                       backgroundColor: Theme.of(context).primaryColor,
                       child: Icon(
-                        FontAwesomeIcons.locationArrow,
+                        FontAwesomeIcons.mapMarkerAlt,
                         color: Colors.white,
                       ),
                     ),

@@ -6,6 +6,7 @@ abstract class AppRoutes {
   static const String home = '/home';
   static const String editProfile = '/editProfile';
   static const String search = '/search';
+  static const String searchMap = '/searchMap';
   static const String hotel = '/hotel';
   static const String reviews = '/reviews';
 }

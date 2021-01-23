@@ -9,6 +9,7 @@ import '../ui/pages/hotel/hotel.dart';
 import '../ui/pages/login/login.dart';
 import '../ui/pages/reviews/reviews.dart';
 import '../ui/pages/search/search.dart';
+import '../ui/pages/search_map/search_map.dart';
 import '../ui/pages/sign_up/sign_up.dart';
 import '../ui/pages/welcome/welcome.dart';
 import 'routes.dart';
@@ -45,6 +46,10 @@ abstract class AppRoutesGenerator {
 
       case AppRoutes.search:
         screen = SearchPage();
+        break;
+
+      case AppRoutes.searchMap:
+        screen = SearchMapPage();
         break;
 
       case AppRoutes.hotel:

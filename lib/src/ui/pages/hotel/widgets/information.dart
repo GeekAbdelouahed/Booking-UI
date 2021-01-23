@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../entities/hotel.dart';
 import '../../../../utils/styles.dart';
@@ -51,7 +52,7 @@ class _InformationWidgetState extends State<InformationWidget> {
                             width: 10,
                           ),
                           Icon(
-                            Icons.location_pin,
+                            FontAwesomeIcons.mapMarkerAlt,
                             color: Theme.of(context).primaryColor,
                             size: 18,
                           ),
@@ -133,9 +134,6 @@ class _InformationWidgetState extends State<InformationWidget> {
                 ],
               ),
             ),
-          ),
-          const SizedBox(
-            height: 30,
           ),
         ],
       );
