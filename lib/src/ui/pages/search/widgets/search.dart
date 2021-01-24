@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
+import '../../../../utils/extensions.dart';
+import '../../../components/date_picker.dart';
 import '../../../components/fields/search.dart';
 
 class SearchWidget extends StatefulWidget {
@@ -8,6 +11,8 @@ class SearchWidget extends StatefulWidget {
 }
 
 class _SearchWidgetState extends State<SearchWidget> {
+  PickerDateRange _dateRange;
+
   @override
   Widget build(BuildContext context) => Column(
         children: [
@@ -18,28 +23,42 @@ class _SearchWidgetState extends State<SearchWidget> {
           Row(
             children: [
               Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Choose date',
-                      style: TextStyle(
-                        color: Colors.grey[600],
-                        fontSize: 13,
+                child: InkWell(
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (_) => AppDatePickerWidget(
+                        onPickDateRange: (dateRange) {
+                          setState(() {
+                            _dateRange = dateRange;
+                          });
+                        },
                       ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      '12 Dec - 22 Dec',
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
+                    );
+                  },
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Choose date',
+                        style: TextStyle(
+                          color: Colors.grey[600],
+                          fontSize: 13,
+                        ),
                       ),
-                    ),
-                  ],
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        '${_dateRange?.startDate?.formatDate(pattern: 'dd MMM') ?? ''} - ${_dateRange?.endDate?.formatDate(pattern: 'dd MMM') ?? ''}',
+                        style: TextStyle(
+                          color: Colors.black87,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(

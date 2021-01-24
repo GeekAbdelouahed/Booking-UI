@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import 'validator.dart';
 
@@ -23,4 +24,9 @@ extension BuildContextExtensions on BuildContext {
           child: child,
         ),
       );
+}
+
+extension DateTimeExtensions on DateTime {
+  String formatDate({String pattern = 'E dd MMM'}) =>
+      DateFormat(pattern).format(this);
 }
