@@ -46,31 +46,6 @@ class _SearchMapPageState extends State<SearchMapPage> {
                 child: SearchWidget(),
               ),
             ),
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 30,
-                  vertical: 20,
-                ),
-                child: Row(
-                  children: [
-                    Text('530 hotels found'),
-                    const Spacer(),
-                    Text('Filters'),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Icon(
-                        Icons.filter_list,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
             SliverFillRemaining(
               child: MapWidget(
                 hotels: AppHotels.data,

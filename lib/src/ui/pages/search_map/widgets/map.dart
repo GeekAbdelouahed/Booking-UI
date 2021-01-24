@@ -20,7 +20,7 @@ class MapWidget extends StatefulWidget {
 class _MapWidgetState extends State<MapWidget> {
   final MapController _controller = MapController();
 
-  int _selectedHotelIndex = -1;
+  int _selectedHotelIndex = 0;
 
   @override
   Widget build(BuildContext context) => Stack(

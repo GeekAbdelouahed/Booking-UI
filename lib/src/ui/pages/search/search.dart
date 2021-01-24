@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../dummy_data/hotels.dart';
 import '../../../routes/routes.dart';
 import '../../../utils/styles.dart';
+import '../../components/filter.dart';
 import '../../components/my_trip.dart';
 import 'widgets/search.dart';
 
@@ -65,7 +67,14 @@ class _SearchPageState extends State<SearchPage> {
                       width: 5,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(
+                          CupertinoPageRoute(
+                            fullscreenDialog: true,
+                            builder: (_) => AppFilterWidget(),
+                          ),
+                        );
+                      },
                       child: Icon(
                         Icons.filter_list,
                         color: Theme.of(context).primaryColor,
