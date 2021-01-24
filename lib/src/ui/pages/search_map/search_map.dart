@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../dummy_data/hotels.dart';
 import '../../../utils/styles.dart';
+import '../../components/filter.dart';
 import 'widgets/map.dart';
 import 'widgets/search.dart';
 
@@ -16,7 +18,14 @@ class _SearchMapPageState extends State<SearchMapPage> {
         appBar: AppBar(
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  CupertinoPageRoute(
+                    fullscreenDialog: true,
+                    builder: (_) => AppFilterWidget(),
+                  ),
+                );
+              },
               tooltip: 'Filters',
               icon: Icon(
                 Icons.filter_list,
