@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
-import '../../utils/extensions.dart';
-import '../../utils/styles.dart';
-import 'buttons/rounded_button.dart';
+import '../../../utils/extensions.dart';
+import '../../../utils/styles.dart';
+import '../buttons/rounded_button.dart';
 
-class AppDatePickerWidget extends StatefulWidget {
+class AppDatePickerDialog extends StatefulWidget {
   final Function(PickerDateRange) onPickDateRange;
 
-  const AppDatePickerWidget({Key key, @required this.onPickDateRange})
+  const AppDatePickerDialog({Key key, @required this.onPickDateRange})
       : super(key: key);
 
   @override
-  _AppDatePickerWidgetState createState() => _AppDatePickerWidgetState();
+  _AppDatePickerDialogState createState() => _AppDatePickerDialogState();
 }
 
-class _AppDatePickerWidgetState extends State<AppDatePickerWidget> {
+class _AppDatePickerDialogState extends State<AppDatePickerDialog> {
   PickerDateRange _dateRange;
 
   @override
@@ -102,7 +102,7 @@ class _AppDatePickerWidgetState extends State<AppDatePickerWidget> {
                   AppRoundedButton(
                     onPressed: () {
                       widget.onPickDateRange?.call(_dateRange);
-                      Navigator.of(context).pop(_dateRange);
+                      Navigator.of(context).pop();
                     },
                     title: 'Apply',
                   ),
