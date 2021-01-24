@@ -15,7 +15,7 @@ class TabBarWidget extends StatelessWidget {
         ),
         child: TabBar(
           controller: controller,
-          isScrollable: true,
+          labelPadding: const EdgeInsets.all(0),
           indicatorColor: Colors.transparent,
           unselectedLabelColor: Colors.grey[500],
           labelColor: Theme.of(context).primaryColor,
