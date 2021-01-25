@@ -7,7 +7,7 @@ import '../../../routes/routes.dart';
 import '../../../utils/styles.dart';
 import '../../components/filter.dart';
 import '../../components/my_trip.dart';
-import 'widgets/search.dart';
+import '../../components/search.dart';
 
 class SearchPage extends StatefulWidget {
   @override
@@ -49,7 +49,7 @@ class _SearchPageState extends State<SearchPage> {
               child: Container(
                 color: Colors.grey[100],
                 padding: const EdgeInsets.all(30),
-                child: SearchWidget(),
+                child: AppSearchWidget(),
               ),
             ),
             SliverToBoxAdapter(

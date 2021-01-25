@@ -89,6 +89,7 @@ class _AppDatePickerDialogState extends State<AppDatePickerDialog> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   SfDateRangePicker(
+                    enablePastDates: false,
                     selectionMode: DateRangePickerSelectionMode.range,
                     onSelectionChanged: (selection) {
                       setState(() {

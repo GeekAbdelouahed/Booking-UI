@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../entities/hotel.dart';
+import '../ui/pages/book/book.dart';
 import '../ui/pages/edit_profile/edit_profile.dart';
 import '../ui/pages/get_started/get_started.dart';
 import '../ui/pages/home/home.dart';
@@ -61,7 +62,13 @@ abstract class AppRoutesGenerator {
       case AppRoutes.reviews:
         screen = args is Hotel
             ? ReviewsPage(hotel: args)
-            : _errorScreen(AppRoutes.hotel);
+            : _errorScreen(AppRoutes.reviews);
+        break;
+
+      case AppRoutes.book:
+        screen = args is Hotel
+            ? BookPage(hotel: args)
+            : _errorScreen(AppRoutes.book);
         break;
 
       default:

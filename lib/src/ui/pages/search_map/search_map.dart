@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import '../../../../dummy_data/hotels.dart';
 import '../../../utils/styles.dart';
 import '../../components/filter.dart';
+import '../../components/search.dart';
 import 'widgets/map.dart';
-import 'widgets/search.dart';
 
 class SearchMapPage extends StatefulWidget {
   @override
@@ -52,7 +52,7 @@ class _SearchMapPageState extends State<SearchMapPage> {
               child: Container(
                 color: Colors.grey[100],
                 padding: const EdgeInsets.all(30),
-                child: SearchWidget(),
+                child: AppSearchWidget(),
               ),
             ),
             SliverFillRemaining(

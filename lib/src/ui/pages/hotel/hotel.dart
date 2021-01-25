@@ -82,7 +82,12 @@ class HotelPage extends StatelessWidget {
                   bottom: 20,
                 ),
                 child: AppRoundedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(
+                      AppRoutes.book,
+                      arguments: hotel,
+                    );
+                  },
                   title: 'Book now',
                 ),
               ),

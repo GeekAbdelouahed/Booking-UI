@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
-import '../../../../utils/extensions.dart';
-import '../../../components/dialogs/date_picker.dart';
-import '../../../components/dialogs/rooms.dart';
-import '../../../components/fields/search.dart';
+import '../../utils/extensions.dart';
+import 'dialogs/date_picker.dart';
+import 'dialogs/rooms.dart';
+import 'fields/search.dart';
 
-class SearchWidget extends StatefulWidget {
+class AppSearchWidget extends StatefulWidget {
   @override
-  _SearchWidgetState createState() => _SearchWidgetState();
+  _AppSearchWidgetState createState() => _AppSearchWidgetState();
 }
 
-class _SearchWidgetState extends State<SearchWidget> {
+class _AppSearchWidgetState extends State<AppSearchWidget> {
   PickerDateRange _dateRange;
 
   int _rooms = 1;
@@ -56,7 +56,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                         height: 5,
                       ),
                       Text(
-                        '${_dateRange?.startDate?.formatDate(pattern: 'dd MMM') ?? ''} - ${_dateRange?.endDate?.formatDate(pattern: 'dd MMM') ?? ''}',
+                        '${_dateRange?.startDate?.formatDate(pattern: 'dd MMM') ?? 'Depart'} - ${_dateRange?.endDate?.formatDate(pattern: 'dd MMM') ?? 'Return'}',
                         style: TextStyle(
                           color: Colors.black87,
                           fontSize: 15,
@@ -100,13 +100,49 @@ class _SearchWidgetState extends State<SearchWidget> {
                       const SizedBox(
                         height: 5,
                       ),
-                      Text(
-                        '$_rooms Rooms - $_adults Adults - $_children Children',
-                        style: TextStyle(
-                          color: Colors.black87,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600,
-                        ),
+                      Wrap(
+                        children: [
+                          Text(
+                            '$_rooms Rooms',
+                            style: TextStyle(
+                              color: Colors.black87,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Text(
+                            ' - ',
+                            style: TextStyle(
+                              color: Colors.black87,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Text(
+                            '$_adults Adults',
+                            style: TextStyle(
+                              color: Colors.black87,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Text(
+                            ' - ',
+                            style: TextStyle(
+                              color: Colors.black87,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Text(
+                            '$_children Children',
+                            style: TextStyle(
+                              color: Colors.black87,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
