@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../utils/styles.dart';
+import 'buttons/checkbox.dart';
 import 'buttons/rounded_button.dart';
 
 class AppFilterWidget extends StatefulWidget {
@@ -74,62 +75,56 @@ class _AppFilterWidgetState extends State<AppFilterWidget> {
             const SizedBox(
               height: 10,
             ),
-            CheckboxListTile(
-              title: Text('Free Breakfast'),
-              value: _freeBreakfast,
-              onChanged: (isChecked) {
-                setState(() {
-                  _freeBreakfast = isChecked;
-                });
-              },
-            ),
-            const Divider(
-              height: 1,
-            ),
-            CheckboxListTile(
-              title: Text('Free Parking'),
-              value: _freeParking,
-              onChanged: (isChecked) {
-                setState(() {
-                  _freeParking = isChecked;
-                });
-              },
-            ),
-            const Divider(
-              height: 1,
-            ),
-            CheckboxListTile(
-              title: Text('Pool'),
-              value: _pool,
-              onChanged: (isChecked) {
-                setState(() {
-                  _pool = isChecked;
-                });
-              },
-            ),
-            const Divider(
-              height: 1,
-            ),
-            CheckboxListTile(
-              title: Text('Pet Friendly'),
-              value: _petFriendly,
-              onChanged: (isChecked) {
-                setState(() {
-                  _petFriendly = isChecked;
-                });
-              },
-            ),
-            const Divider(
-              height: 1,
-            ),
-            CheckboxListTile(
-              title: Text('Free Wifi'),
-              value: _freeWifi,
-              onChanged: (isChecked) {
-                setState(() {
-                  _freeWifi = isChecked;
-                });
-              },
+            Wrap(
+              spacing: 20,
+              runSpacing: 20,
+              children: [
+                AppCheckBox(
+                  title: 'Free Breakfast',
+                  value: _freeBreakfast,
+                  onChanged: (isChecked) {
+                    setState(() {
+                      _freeBreakfast = isChecked;
+                    });
+                  },
+                ),
+                AppCheckBox(
+                  title: 'Free Parking',
+                  value: _freeParking,
+                  onChanged: (isChecked) {
+                    setState(() {
+                      _freeParking = isChecked;
+                    });
+                  },
+                ),
+                AppCheckBox(
+                  title: 'Pool',
+                  value: _pool,
+                  onChanged: (isChecked) {
+                    setState(() {
+                      _pool = isChecked;
+                    });
+                  },
+                ),
+                AppCheckBox(
+                  title: 'Pet Friendly',
+                  value: _petFriendly,
+                  onChanged: (isChecked) {
+                    setState(() {
+                      _petFriendly = isChecked;
+                    });
+                  },
+                ),
+                AppCheckBox(
+                  title: 'Free Wifi',
+                  value: _freeWifi,
+                  onChanged: (isChecked) {
+                    setState(() {
+                      _freeWifi = isChecked;
+                    });
+                  },
+                ),
+              ],
             ),
             Divider(
               height: 40,
