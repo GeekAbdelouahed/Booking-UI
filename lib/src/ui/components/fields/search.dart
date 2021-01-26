@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppSearchField extends StatelessWidget {
@@ -33,7 +34,7 @@ class AppSearchField extends StatelessWidget {
             child: CircleAvatar(
               backgroundColor: Theme.of(context).primaryColor,
               child: Icon(
-                Icons.search,
+                CupertinoIcons.search,
                 color: Colors.white,
               ),
             ),

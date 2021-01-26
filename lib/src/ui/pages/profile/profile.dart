@@ -1,9 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../routes/routes.dart';
 import '../../../utils/styles.dart';
 import '../../components/image.dart';
-import 'widgets/item.dart';
+import '../../components/item.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -64,48 +65,50 @@ class _ProfilePageState extends State<ProfilePage>
         const SizedBox(
           height: 30,
         ),
-        ItemWidget(
+        ItemListWidget(
           onPressed: () {},
           title: 'Change Password',
-          icon: Icons.lock,
+          icon: CupertinoIcons.lock_fill,
         ),
         const Divider(
           height: 1,
         ),
-        ItemWidget(
+        ItemListWidget(
           onPressed: () {},
           title: 'Invite Friends',
-          icon: Icons.people,
+          icon: CupertinoIcons.person_2_alt,
         ),
         const Divider(
           height: 1,
         ),
-        ItemWidget(
+        ItemListWidget(
           onPressed: () {},
           title: 'Credits & Coupons',
-          icon: Icons.card_giftcard,
+          icon: CupertinoIcons.gift_fill,
         ),
         const Divider(
           height: 1,
         ),
-        ItemWidget(
+        ItemListWidget(
           onPressed: () {},
           title: 'Help Center',
-          icon: Icons.help,
+          icon: CupertinoIcons.question_circle_fill,
         ),
         const Divider(
           height: 1,
         ),
-        ItemWidget(
+        ItemListWidget(
           onPressed: () {},
           title: 'Payments',
-          icon: Icons.payment,
+          icon: CupertinoIcons.creditcard_fill,
         ),
         const Divider(
           height: 1,
         ),
-        ItemWidget(
-          onPressed: () {},
+        ItemListWidget(
+          onPressed: () {
+            Navigator.of(context).pushNamed(AppRoutes.settings);
+          },
           title: 'Settings',
           icon: Icons.settings,
         ),

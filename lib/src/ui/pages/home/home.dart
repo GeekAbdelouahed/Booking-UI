@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../explore/explore.dart';
@@ -43,21 +44,21 @@ class _HomePageState extends State<HomePage>
                 Tab(
                   iconMargin: const EdgeInsets.all(5),
                   icon: Icon(
-                    Icons.search,
+                    CupertinoIcons.search,
                   ),
                   text: 'Explore',
                 ),
                 Tab(
                   iconMargin: const EdgeInsets.all(5),
                   icon: Icon(
-                    Icons.history,
+                    CupertinoIcons.paperplane,
                   ),
                   text: 'My Trips',
                 ),
                 Tab(
                   iconMargin: const EdgeInsets.all(5),
                   icon: Icon(
-                    Icons.person_outline,
+                    CupertinoIcons.person,
                   ),
                   text: 'Profile',
                 )

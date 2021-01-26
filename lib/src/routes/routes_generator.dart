@@ -11,6 +11,7 @@ import '../ui/pages/login/login.dart';
 import '../ui/pages/reviews/reviews.dart';
 import '../ui/pages/search/search.dart';
 import '../ui/pages/search_map/search_map.dart';
+import '../ui/pages/settings/settings.dart';
 import '../ui/pages/sign_up/sign_up.dart';
 import '../ui/pages/welcome/welcome.dart';
 import 'routes.dart';
@@ -69,6 +70,10 @@ abstract class AppRoutesGenerator {
         screen = args is Hotel
             ? BookPage(hotel: args)
             : _errorScreen(AppRoutes.book);
+        break;
+
+      case AppRoutes.settings:
+        screen = SettingsPage();
         break;
 
       default:

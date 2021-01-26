@@ -10,4 +10,5 @@ abstract class AppRoutes {
   static const String hotel = '/hotel';
   static const String reviews = '/reviews';
   static const String book = '/book';
+  static const String settings = '/settings';
 }

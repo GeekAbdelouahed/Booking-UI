@@ -23,7 +23,7 @@ class SearchWidget extends StatelessWidget {
             child: Row(
               children: [
                 Icon(
-                  Icons.search,
+                  CupertinoIcons.search,
                   color: Theme.of(context).primaryColor,
                 ),
                 const SizedBox(
