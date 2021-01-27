@@ -28,8 +28,18 @@ class SettingsPage extends StatelessWidget {
             ),
             ItemListWidget(
               onPressed: () {},
+              title: 'Languages',
+              subtitle: 'English',
+              icon: Icons.keyboard_arrow_right,
+            ),
+            const Divider(
+              height: 1,
+            ),
+            ItemListWidget(
+              onPressed: () {},
               title: 'Country',
               subtitle: 'Algeria',
+              icon: Icons.keyboard_arrow_right,
             ),
             const Divider(
               height: 1,
@@ -38,6 +48,7 @@ class SettingsPage extends StatelessWidget {
               onPressed: () {},
               title: 'Currency',
               subtitle: 'USD',
+              icon: Icons.keyboard_arrow_right,
             ),
             const Divider(
               height: 1,
