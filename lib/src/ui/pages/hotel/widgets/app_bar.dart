@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../entities/hotel.dart';
@@ -21,7 +22,24 @@ class _AppBarWidgetState extends State<AppBarWidget> {
   Widget build(BuildContext context) => SliverAppBar(
         stretch: true,
         expandedHeight: MediaQuery.of(context).size.width,
+        leading: const SizedBox(),
         actions: [
+          const SizedBox(
+            width: 20,
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: CircleAvatar(
+              backgroundColor: Colors.white,
+              child: Icon(
+                Icons.arrow_back,
+                color: Theme.of(context).primaryColor,
+              ),
+            ),
+          ),
+          const Spacer(),
           AppFavoriteButton(
             onFavoriteChanged: (isFavorite) {},
           ),
