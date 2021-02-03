@@ -1,10 +1,19 @@
-import 'package:booking/src/ui/components/item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../utils/extensions.dart';
 import '../../../utils/styles.dart';
+import '../../components/dialogs/languages.dart';
+import '../../components/item.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends StatefulWidget {
+  @override
+  _SettingsPageState createState() => _SettingsPageState();
+}
+
+class _SettingsPageState extends State<SettingsPage> {
+  String _selectedLanguage = 'English';
+
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(),
@@ -27,9 +36,16 @@ class SettingsPage extends StatelessWidget {
               height: 1,
             ),
             ItemListWidget(
-              onPressed: () {},
+              onPressed: () async {
+                final language =
+                    await context.showAppDialog(child: AppDialogLanguages());
+                if (language == null) return;
+                setState(() {
+                  _selectedLanguage = language;
+                });
+              },
               title: 'Languages',
-              subtitle: 'English',
+              subtitle: _selectedLanguage,
               icon: Icons.keyboard_arrow_right,
             ),
             const Divider(
@@ -80,6 +96,7 @@ class SettingsPage extends StatelessWidget {
             ItemListWidget(
               onPressed: () {},
               title: 'Logout',
+              tint: Colors.red,
               icon: Icons.keyboard_arrow_right,
             ),
             const Divider(

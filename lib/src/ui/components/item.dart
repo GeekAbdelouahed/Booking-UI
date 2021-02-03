@@ -5,6 +5,7 @@ class ItemListWidget extends StatelessWidget {
   final String title;
   final String subtitle;
   final IconData icon;
+  final Color tint;
 
   const ItemListWidget({
     Key key,
@@ -12,14 +13,23 @@ class ItemListWidget extends StatelessWidget {
     this.subtitle,
     this.icon,
     this.onPressed,
+    this.tint,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) => ListTile(
         onTap: onPressed,
         contentPadding: const EdgeInsets.symmetric(vertical: 5),
-        title: Text(title),
+        title: Text(
+          title,
+          style: TextStyle(
+            color: tint,
+          ),
+        ),
         subtitle: subtitle != null ? Text(subtitle ?? '') : null,
-        trailing: Icon(icon),
+        trailing: Icon(
+          icon,
+          color: tint,
+        ),
       );
 }

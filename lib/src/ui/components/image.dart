@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
+import '../../routes/routes.dart';
+
 class AppImage extends StatelessWidget {
   final String url;
   final double height;
@@ -20,8 +22,10 @@ class AppImage extends StatelessWidget {
         clipBehavior: Clip.antiAlias,
         borderRadius: BorderRadius.circular(radius),
         child: InkWell(
-          onTap: null // TODO navigate to image preview
-          ,
+          onTap: () {
+            Navigator.of(context)
+                .pushNamed(AppRoutes.imagePreview, arguments: url);
+          },
           child: CachedNetworkImage(
             imageUrl: url,
             fit: BoxFit.cover,

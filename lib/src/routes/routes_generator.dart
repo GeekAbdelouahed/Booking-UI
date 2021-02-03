@@ -8,6 +8,7 @@ import '../ui/pages/forgot_password/forgot_password.dart';
 import '../ui/pages/get_started/get_started.dart';
 import '../ui/pages/home/home.dart';
 import '../ui/pages/hotel/hotel.dart';
+import '../ui/pages/image_preview/image_preview.dart';
 import '../ui/pages/login/login.dart';
 import '../ui/pages/profile_edit/profile_edit.dart';
 import '../ui/pages/reviews/reviews.dart';
@@ -84,6 +85,12 @@ abstract class AppRoutesGenerator {
 
       case AppRoutes.forgotPassword:
         screen = ForgotPasswordPage();
+        break;
+
+      case AppRoutes.imagePreview:
+        screen = args is String
+            ? ImagePreviewPage(url: args)
+            : _errorScreen(AppRoutes.imagePreview);
         break;
 
       default:
