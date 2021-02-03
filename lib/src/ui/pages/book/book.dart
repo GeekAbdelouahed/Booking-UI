@@ -32,6 +32,7 @@ class _BookPageState extends State<BookPage> {
   int _children = 0;
 
   void _book() async {
+    // ignore: unawaited_futures
     showDialog(
       context: context,
       barrierDismissible: false,
@@ -42,9 +43,10 @@ class _BookPageState extends State<BookPage> {
 
     Navigator.pop(context);
 
-    bool isSuccess = Random().nextInt(2) == 1;
+    final isSuccess = Random().nextInt(2) == 1;
 
     if (isSuccess) {
+      // ignore: unawaited_futures
       showDialog(
         context: context,
         builder: (_) => AppDialogSuccess(
@@ -52,6 +54,7 @@ class _BookPageState extends State<BookPage> {
         ),
       );
     } else {
+      // ignore: unawaited_futures
       showDialog(
         context: context,
         builder: (_) => AppDialogFailure(

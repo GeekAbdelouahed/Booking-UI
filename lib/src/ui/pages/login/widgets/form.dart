@@ -21,7 +21,7 @@ class _FormWidgetState extends State<FormWidget> {
   final _passwordController = TextEditingController();
 
   void _validateForm() {
-    bool isFormValid = _formKey.currentState.validate();
+    final isFormValid = _formKey.currentState.validate();
     if (!isFormValid) return;
     print('email: ${_emailController.text}');
     print('password: ${_passwordController.text}');
@@ -40,8 +40,7 @@ class _FormWidgetState extends State<FormWidget> {
   }
 
   void _forgotPassword() {
-    // TODO navigate to forgot password screen
-    print('Forgot password');
+    Navigator.of(context).pushNamed(AppRoutes.forgotPassword);
   }
 
   @override

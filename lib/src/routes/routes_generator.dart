@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../entities/hotel.dart';
 import '../ui/pages/book/book.dart';
 import '../ui/pages/change_password/change_password.dart';
+import '../ui/pages/forgot_password/forgot_password.dart';
 import '../ui/pages/get_started/get_started.dart';
 import '../ui/pages/home/home.dart';
 import '../ui/pages/hotel/hotel.dart';
@@ -79,6 +80,10 @@ abstract class AppRoutesGenerator {
 
       case AppRoutes.changePassword:
         screen = ChangePasswordPage();
+        break;
+
+      case AppRoutes.forgotPassword:
+        screen = ForgotPasswordPage();
         break;
 
       default:
