@@ -6,12 +6,12 @@ import '../../components/buttons/rounded_button.dart';
 import '../../components/fields/form_field.dart';
 import 'widgets/avatar.dart';
 
-class EditProfilePage extends StatefulWidget {
+class ProfileEditPage extends StatefulWidget {
   @override
-  _EditProfilePageState createState() => _EditProfilePageState();
+  _ProfileEditPageState createState() => _ProfileEditPageState();
 }
 
-class _EditProfilePageState extends State<EditProfilePage> {
+class _ProfileEditPageState extends State<ProfileEditPage> {
   final _userNameController = TextEditingController();
   final _emailController = TextEditingController();
   final _phoneController = TextEditingController();

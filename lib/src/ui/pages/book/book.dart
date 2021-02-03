@@ -24,8 +24,11 @@ class BookPage extends StatefulWidget {
 class _BookPageState extends State<BookPage> {
   PickerDateRange _dateRange;
 
+  // ignore: unused_field
   int _room = 1;
+  // ignore: unused_field
   int _adults = 1;
+  // ignore: unused_field
   int _children = 0;
 
   void _book() async {

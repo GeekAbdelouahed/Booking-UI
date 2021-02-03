@@ -72,6 +72,7 @@ class _AppFormFieldState extends State<AppFormField> {
       );
 
   Widget _buildObscureIcon() => InkWell(
+        canRequestFocus: false,
         onTap: () {
           setState(() {
             _isObscureText = !_isObscureText;

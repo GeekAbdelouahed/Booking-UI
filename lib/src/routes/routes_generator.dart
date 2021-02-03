@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 
 import '../entities/hotel.dart';
 import '../ui/pages/book/book.dart';
-import '../ui/pages/edit_profile/edit_profile.dart';
+import '../ui/pages/change_password/change_password.dart';
 import '../ui/pages/get_started/get_started.dart';
 import '../ui/pages/home/home.dart';
 import '../ui/pages/hotel/hotel.dart';
 import '../ui/pages/login/login.dart';
+import '../ui/pages/profile_edit/profile_edit.dart';
 import '../ui/pages/reviews/reviews.dart';
 import '../ui/pages/search/search.dart';
 import '../ui/pages/search_map/search_map.dart';
@@ -42,8 +43,8 @@ abstract class AppRoutesGenerator {
         screen = HomePage();
         break;
 
-      case AppRoutes.editProfile:
-        screen = EditProfilePage();
+      case AppRoutes.profileEdit:
+        screen = ProfileEditPage();
         break;
 
       case AppRoutes.search:
@@ -74,6 +75,10 @@ abstract class AppRoutesGenerator {
 
       case AppRoutes.settings:
         screen = SettingsPage();
+        break;
+
+      case AppRoutes.changePassword:
+        screen = ChangePasswordPage();
         break;
 
       default:

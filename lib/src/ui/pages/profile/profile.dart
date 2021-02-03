@@ -21,7 +21,7 @@ class _ProfilePageState extends State<ProfilePage>
       children: [
         InkWell(
           onTap: () {
-            Navigator.of(context).pushNamed(AppRoutes.editProfile);
+            Navigator.of(context).pushNamed(AppRoutes.profileEdit);
           },
           child: Row(
             children: [
@@ -52,12 +52,15 @@ class _ProfilePageState extends State<ProfilePage>
               const SizedBox(
                 width: 10,
               ),
-              AppImage(
-                url:
-                    'https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-                height: 75,
-                width: 75,
-                radius: 100,
+              Hero(
+                tag: 'profileImage',
+                child: AppImage(
+                  url:
+                      'https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+                  height: 75,
+                  width: 75,
+                  radius: 100,
+                ),
               ),
             ],
           ),
@@ -66,7 +69,9 @@ class _ProfilePageState extends State<ProfilePage>
           height: 30,
         ),
         ItemListWidget(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushNamed(AppRoutes.changePassword);
+          },
           title: 'Change Password',
           icon: CupertinoIcons.lock_fill,
         ),

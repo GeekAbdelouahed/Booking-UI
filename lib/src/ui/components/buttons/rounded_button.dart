@@ -41,7 +41,7 @@ class AppRoundedButton extends StatelessWidget {
               ),
             },
             Text(
-              title,
+              title.toUpperCase(),
               style: Theme.of(context).textTheme.button.copyWith(
                     color: textColor ?? Colors.white.withOpacity(.9),
                     fontSize: 16,
