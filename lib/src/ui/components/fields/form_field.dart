@@ -4,19 +4,19 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../utils/styles.dart';
 
 class AppFormField extends StatefulWidget {
-  final TextEditingController controller;
-  final IconData prefixIcon;
-  final String hint;
+  final TextEditingController? controller;
+  final IconData? prefixIcon;
+  final String? hint;
   final bool obscureText;
-  final TextInputAction textInputAction;
-  final TextInputType keyboardType;
+  final TextInputAction? textInputAction;
+  final TextInputType? keyboardType;
   final double borderRadius;
   final int maxLines;
-  final String Function(String) validator;
-  final String initialValue;
+  final String? Function(String?)? validator;
+  final String? initialValue;
 
   const AppFormField({
-    Key key,
+    Key? key,
     this.controller,
     this.prefixIcon,
     this.hint,
@@ -34,7 +34,7 @@ class AppFormField extends StatefulWidget {
 }
 
 class _AppFormFieldState extends State<AppFormField> {
-  bool _isObscureText;
+  late bool _isObscureText;
 
   @override
   void initState() {
@@ -47,7 +47,7 @@ class _AppFormFieldState extends State<AppFormField> {
         children: [
           if (widget.hint?.isNotEmpty ?? false)
             Text(
-              widget.hint,
+              widget.hint!,
               style: AppStyles.subtitleStyle.copyWith(
                 color: Colors.grey[600],
                 fontWeight: FontWeight.w600,

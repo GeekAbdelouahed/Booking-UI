@@ -12,7 +12,7 @@ class AppSearchWidget extends StatefulWidget {
 }
 
 class _AppSearchWidgetState extends State<AppSearchWidget> {
-  PickerDateRange _dateRange;
+  PickerDateRange? _dateRange;
 
   int _rooms = 1;
   int _adults = 1;

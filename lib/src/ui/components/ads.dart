@@ -9,7 +9,7 @@ import 'image.dart';
 class AdsItemWidget extends StatelessWidget {
   final Hotel hotel;
 
-  const AdsItemWidget({Key key, @required this.hotel}) : super(key: key);
+  const AdsItemWidget({Key? key, required this.hotel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => InkWell(
@@ -18,7 +18,7 @@ class AdsItemWidget extends StatelessWidget {
           children: [
             Positioned.fill(
               child: AppImage(
-                url: hotel.photos[0],
+                url: hotel.photos![0],
               ),
             ),
             Positioned.fill(
@@ -35,7 +35,7 @@ class AdsItemWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    hotel.title,
+                    hotel.title!,
                     style: AppStyles.titleStyle.copyWith(
                       color: Colors.white,
                       fontSize: 35,

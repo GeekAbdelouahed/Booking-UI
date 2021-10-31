@@ -13,7 +13,7 @@ class TripsPage extends StatefulWidget {
 
 class _TripsPageState extends State<TripsPage>
     with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
-  TabController _controller;
+  TabController? _controller;
 
   @override
   void initState() {

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
 class AppRoundedButton extends StatelessWidget {
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final String title;
   final EdgeInsetsGeometry padding;
   final double radius;
-  final double elevation;
-  final Color color;
-  final Color textColor;
-  final Widget icon;
+  final double? elevation;
+  final Color? color;
+  final Color? textColor;
+  final Widget? icon;
 
   const AppRoundedButton({
-    Key key,
-    @required this.onPressed,
-    @required this.title,
+    Key? key,
+    required this.onPressed,
+    required this.title,
     this.padding = const EdgeInsets.symmetric(horizontal: 30, vertical: 17),
     this.radius = 30,
     this.elevation,
@@ -23,7 +23,8 @@ class AppRoundedButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => RaisedButton(
+  Widget build(BuildContext context) {
+    return RaisedButton(
         elevation: elevation,
         onPressed: onPressed,
         color: color ?? Theme.of(context).primaryColor,
@@ -35,14 +36,14 @@ class AppRoundedButton extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (icon != null) ...{
-              icon,
+              icon!,
               const SizedBox(
                 width: 10,
               ),
             },
             Text(
               title.toUpperCase(),
-              style: Theme.of(context).textTheme.button.copyWith(
+              style: Theme.of(context).textTheme.button!.copyWith(
                     color: textColor ?? Colors.white.withOpacity(.9),
                     fontSize: 16,
                   ),
@@ -50,4 +51,5 @@ class AppRoundedButton extends StatelessWidget {
           ],
         ),
       );
+  }
 }

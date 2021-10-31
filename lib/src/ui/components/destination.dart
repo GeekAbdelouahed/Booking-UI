@@ -7,7 +7,7 @@ import 'image.dart';
 class DestinationItemWidget extends StatelessWidget {
   final Country country;
 
-  const DestinationItemWidget({Key key, @required this.country})
+  const DestinationItemWidget({Key? key, required this.country})
       : super(key: key);
 
   @override
@@ -35,7 +35,7 @@ class DestinationItemWidget extends StatelessWidget {
                 start: 20,
                 bottom: 20,
                 child: Text(
-                  country.name,
+                  country.name!,
                   style: AppStyles.titleStyle.copyWith(
                     color: Colors.white,
                     fontSize: 25,

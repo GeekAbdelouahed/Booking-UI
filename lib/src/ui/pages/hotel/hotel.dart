@@ -12,7 +12,7 @@ import 'widgets/reviews.dart';
 class HotelPage extends StatelessWidget {
   final Hotel hotel;
 
-  const HotelPage({Key key, @required this.hotel}) : super(key: key);
+  const HotelPage({Key? key, required this.hotel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -69,8 +69,8 @@ class HotelPage extends StatelessWidget {
                   bottom: 20,
                 ),
                 child: MapWidget(
-                  latitude: hotel.address.latitude,
-                  longitude: hotel.address.longitude,
+                  latitude: hotel.address!.latitude,
+                  longitude: hotel.address!.longitude,
                 ),
               ),
             ),

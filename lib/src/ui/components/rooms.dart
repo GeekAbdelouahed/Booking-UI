@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../../utils/styles.dart';
 
 class AppRoomsWidget extends StatefulWidget {
-  final Function(int, int, int) onRoomsChanged;
+  final Function(int, int, int)? onRoomsChanged;
 
-  const AppRoomsWidget({Key key, this.onRoomsChanged}) : super(key: key);
+  const AppRoomsWidget({Key? key, this.onRoomsChanged}) : super(key: key);
 
   @override
   _AppRoomsWidgetState createState() => _AppRoomsWidgetState();
@@ -61,7 +61,7 @@ class _AppRoomsWidgetState extends State<AppRoomsWidget> {
             title: RichText(
               text: TextSpan(
                 text: 'Adults  ',
-                style: Theme.of(context).textTheme.button.copyWith(
+                style: Theme.of(context).textTheme.button!.copyWith(
                       color: Colors.black,
                     ),
                 children: [
@@ -110,7 +110,7 @@ class _AppRoomsWidgetState extends State<AppRoomsWidget> {
             title: RichText(
               text: TextSpan(
                 text: 'Children  ',
-                style: Theme.of(context).textTheme.button.copyWith(
+                style: Theme.of(context).textTheme.button!.copyWith(
                       color: Colors.black,
                     ),
                 children: [

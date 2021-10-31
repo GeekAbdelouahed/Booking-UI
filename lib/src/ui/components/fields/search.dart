@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppSearchField extends StatelessWidget {
-  final TextEditingController controller;
+  final TextEditingController? controller;
 
-  const AppSearchField({Key key, this.controller}) : super(key: key);
+  const AppSearchField({Key? key, this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Row(

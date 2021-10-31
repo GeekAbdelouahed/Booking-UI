@@ -5,10 +5,10 @@ import '../../../../utils/styles.dart';
 import '../../../components/review.dart';
 
 class ReviewsWidget extends StatelessWidget {
-  final List<Review> reviews;
-  final VoidCallback onViewAll;
+  final List<Review>? reviews;
+  final VoidCallback? onViewAll;
 
-  const ReviewsWidget({Key key, @required this.reviews, this.onViewAll})
+  const ReviewsWidget({Key? key, required this.reviews, this.onViewAll})
       : super(key: key);
 
   @override
@@ -17,7 +17,7 @@ class ReviewsWidget extends StatelessWidget {
           Row(
             children: [
               Text(
-                'Reviews (${reviews.length})',
+                'Reviews (${reviews!.length})',
                 style: AppStyles.subtitleStyle.copyWith(
                   color: Colors.grey[500],
                   fontSize: 20,
@@ -35,7 +35,7 @@ class ReviewsWidget extends StatelessWidget {
               ),
             ],
           ),
-          ...reviews
+          ...reviews!
               .take(2)
               .map(
                 (review) => Column(

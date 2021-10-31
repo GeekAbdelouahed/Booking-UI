@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AppFavoriteButton extends StatefulWidget {
-  final Function(bool) onFavoriteChanged;
+  final Function(bool?)? onFavoriteChanged;
   final bool isFavorite;
 
   const AppFavoriteButton({
-    Key key,
+    Key? key,
     this.onFavoriteChanged,
     this.isFavorite = false,
   }) : super(key: key);
@@ -15,7 +15,7 @@ class AppFavoriteButton extends StatefulWidget {
 }
 
 class _AppFavoriteButtonState extends State<AppFavoriteButton> {
-  bool _isFavorite;
+  bool? _isFavorite;
 
   @override
   void initState() {
@@ -24,20 +24,22 @@ class _AppFavoriteButtonState extends State<AppFavoriteButton> {
   }
 
   @override
-  Widget build(BuildContext context) => GestureDetector(
-        onTap: () {
-          setState(() {
-            _isFavorite = !_isFavorite;
-          });
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _isFavorite = !_isFavorite!;
+        });
 
-          widget.onFavoriteChanged?.call(_isFavorite);
-        },
-        child: CircleAvatar(
-          backgroundColor: Colors.white,
-          child: Icon(
-            _isFavorite ? Icons.favorite : Icons.favorite_border,
-            color: Theme.of(context).primaryColor,
-          ),
+        widget.onFavoriteChanged?.call(_isFavorite);
+      },
+      child: CircleAvatar(
+        backgroundColor: Colors.white,
+        child: Icon(
+          _isFavorite! ? Icons.favorite : Icons.favorite_border,
+          color: Theme.of(context).primaryColor,
         ),
-      );
+      ),
+    );
+  }
 }

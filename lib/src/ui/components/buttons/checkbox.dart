@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class AppCheckBox extends StatefulWidget {
-  final String title;
+  final String? title;
   final bool value;
-  final Function(bool) onChanged;
+  final Function(bool)? onChanged;
 
   const AppCheckBox({
-    Key key,
+    Key? key,
     this.title,
     this.value = false,
     this.onChanged,
@@ -17,7 +17,7 @@ class AppCheckBox extends StatefulWidget {
 }
 
 class _AppCheckBoxState extends State<AppCheckBox> {
-  bool _isChecked;
+  bool _isChecked = false;
 
   @override
   void initState() {
@@ -26,50 +26,52 @@ class _AppCheckBoxState extends State<AppCheckBox> {
   }
 
   @override
-  Widget build(BuildContext context) => InkWell(
-        onTap: () {
-          setState(() {
-            _isChecked = !_isChecked;
-          });
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        setState(() {
+          _isChecked = !_isChecked;
+        });
 
-          widget.onChanged?.call(_isChecked);
-        },
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(2),
+        widget.onChanged?.call(_isChecked);
+      },
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(2),
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.grey[300]!,
+                width: 2,
+              ),
+              shape: BoxShape.circle,
+            ),
+            child: Container(
+              height: 13,
+              width: 13,
+              padding: const EdgeInsets.all(3),
               decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.grey[300],
-                  width: 2,
-                ),
+                color: _isChecked
+                    ? Theme.of(context).accentColor
+                    : Colors.transparent,
                 shape: BoxShape.circle,
               ),
-              child: Container(
-                height: 13,
-                width: 13,
-                padding: const EdgeInsets.all(3),
-                decoration: BoxDecoration(
-                  color: _isChecked
-                      ? Theme.of(context).accentColor
-                      : Colors.transparent,
-                  shape: BoxShape.circle,
-                ),
+            ),
+          ),
+          if (widget.title?.isNotEmpty ?? false) ...{
+            const SizedBox(
+              width: 10,
+            ),
+            Text(
+              widget.title!,
+              style: TextStyle(
+                fontSize: 16,
               ),
             ),
-            if (widget.title?.isNotEmpty ?? false) ...{
-              const SizedBox(
-                width: 10,
-              ),
-              Text(
-                widget.title,
-                style: TextStyle(
-                  fontSize: 16,
-                ),
-              ),
-            },
-          ],
-        ),
-      );
+          },
+        ],
+      ),
+    );
+  }
 }

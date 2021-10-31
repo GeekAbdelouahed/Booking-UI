@@ -7,14 +7,14 @@ import 'image.dart';
 class CategoryItemWidget extends StatelessWidget {
   final Category category;
 
-  const CategoryItemWidget({Key key, @required this.category})
+  const CategoryItemWidget({Key? key, required this.category})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) => Column(
         children: [
           AppImage(
-            url: category.photo,
+            url: category.photo ?? '',
             height: 65,
             width: 65,
             radius: 100,
@@ -23,7 +23,7 @@ class CategoryItemWidget extends StatelessWidget {
             height: 10,
           ),
           Text(
-            category.title,
+            category.title!,
             style: AppStyles.subtitleStyle.copyWith(
               color: Colors.grey[600],
               fontWeight: FontWeight.w600,

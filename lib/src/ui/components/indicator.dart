@@ -5,7 +5,7 @@ class AppIndicator extends StatelessWidget {
   final PageController controller;
   final int count;
 
-  const AppIndicator({Key key, @required this.controller, @required this.count,})
+  const AppIndicator({Key? key, required this.controller, required this.count,})
       : super(key: key);
 
   @override
@@ -17,7 +17,7 @@ class AppIndicator extends StatelessWidget {
           activeDotColor: Theme
               .of(context)
               .primaryColor,
-          dotColor: Colors.grey[300],
+          dotColor: Colors.grey[300]!,
           dotHeight: 10,
           dotWidth: 10,
         ),

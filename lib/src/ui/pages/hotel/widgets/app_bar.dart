@@ -9,7 +9,7 @@ import '../../../components/indicator.dart';
 class AppBarWidget extends StatefulWidget {
   final Hotel hotel;
 
-  const AppBarWidget({Key key, @required this.hotel}) : super(key: key);
+  const AppBarWidget({Key? key, required this.hotel}) : super(key: key);
 
   @override
   _AppBarWidgetState createState() => _AppBarWidgetState();
@@ -56,7 +56,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
               Positioned.fill(
                 child: PageView(
                   controller: _controller,
-                  children: widget.hotel.photos
+                  children: widget.hotel.photos!
                       .map((img) => AppImage(url: img))
                       .toList(),
                 ),
@@ -68,7 +68,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                 child: Center(
                   child: AppIndicator(
                     controller: _controller,
-                    count: widget.hotel.photos.length,
+                    count: widget.hotel.photos!.length,
                   ),
                 ),
               ),

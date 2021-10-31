@@ -24,7 +24,7 @@ class _FormWidgetState extends State<FormWidget> {
   final _confirmPasswordController = TextEditingController();
 
   void _validateForm() {
-    final isFormValid = _formKey.currentState.validate();
+    final isFormValid = _formKey.currentState!.validate();
     if (!isFormValid) return;
     print('firstName: ${_firstNameController.text}');
     print('lastName: ${_lastNameController.text}');
@@ -81,7 +81,7 @@ class _FormWidgetState extends State<FormWidget> {
               textInputAction: TextInputAction.next,
               validator: (text) {
                 if (text?.isEmpty ?? true) return 'Field required!';
-                if (!text.isValidEmail) return 'Email invalid!';
+                if (!(text?.isValidEmail ?? false)) return 'Email invalid!';
                 return null;
               },
             ),
@@ -95,7 +95,8 @@ class _FormWidgetState extends State<FormWidget> {
               textInputAction: TextInputAction.next,
               validator: (text) {
                 if (text?.isEmpty ?? true) return 'Field required!';
-                if (!text.isValidPassword) return 'Password invalid!';
+                if (!(text?.isValidPassword ?? false))
+                  return 'Password invalid!';
                 return null;
               },
             ),
@@ -110,7 +111,7 @@ class _FormWidgetState extends State<FormWidget> {
                 if (text?.isEmpty ?? true) {
                   return 'Field required!';
                 }
-                if (!text.isValidPassword) {
+                if (!(text?.isValidPassword ?? false)) {
                   return 'Password invalid!';
                 }
                 if (_passwordController.text !=

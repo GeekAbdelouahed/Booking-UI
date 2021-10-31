@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppDialogSuccess extends StatelessWidget {
-  final String message;
+  final String? message;
 
-  const AppDialogSuccess({Key key, this.message}) : super(key: key);
+  const AppDialogSuccess({Key? key, this.message}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Dialog(

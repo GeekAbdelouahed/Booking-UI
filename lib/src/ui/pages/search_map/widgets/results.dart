@@ -5,9 +5,9 @@ import '../../../components/deal.dart';
 
 class ResultsWidget extends StatefulWidget {
   final List<Hotel> hotels;
-  final Function(int) onSelectHotel;
+  final Function(int)? onSelectHotel;
 
-  const ResultsWidget({Key key, @required this.hotels, this.onSelectHotel})
+  const ResultsWidget({Key? key, required this.hotels, this.onSelectHotel})
       : super(key: key);
 
   @override

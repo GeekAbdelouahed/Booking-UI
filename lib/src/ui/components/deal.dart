@@ -10,11 +10,11 @@ import 'rating.dart';
 class DealItemWidget extends StatelessWidget {
   final Hotel hotel;
   final double elevation;
-  final Color shadowColor;
+  final Color? shadowColor;
 
   const DealItemWidget({
-    Key key,
-    @required this.hotel,
+    Key? key,
+    required this.hotel,
     this.elevation = 10,
     this.shadowColor,
   }) : super(key: key);
@@ -43,7 +43,7 @@ class DealItemWidget extends StatelessWidget {
                 AspectRatio(
                   aspectRatio: 1,
                   child: AppImage(
-                    url: hotel.photos[0],
+                    url: hotel.photos![0],
                   ),
                 ),
                 Padding(
@@ -52,7 +52,7 @@ class DealItemWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        hotel.title,
+                        hotel.title!,
                         style: AppStyles.titleStyle.copyWith(
                           fontSize: 18,
                           fontWeight: FontWeight.w900,
@@ -62,7 +62,7 @@ class DealItemWidget extends StatelessWidget {
                         height: 5,
                       ),
                       Text(
-                        '${hotel.address.city.name}, ${hotel.address.country.name}',
+                        '${hotel.address!.city!.name}, ${hotel.address!.country!.name}',
                         style: AppStyles.subtitleStyle.copyWith(
                           color: Colors.grey[400],
                           fontSize: 13,
@@ -100,7 +100,7 @@ class DealItemWidget extends StatelessWidget {
                                 height: 5,
                               ),
                               AppRatingBar(
-                                initialRating: hotel.rating.overallRating,
+                                initialRating: hotel.rating!.overallRating,
                               ),
                             ],
                           ),

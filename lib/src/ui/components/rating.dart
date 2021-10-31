@@ -3,13 +3,13 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AppRatingBar extends StatelessWidget {
-  final Function(double) onRatingUpdate;
+  final Function(double)? onRatingUpdate;
   final bool updateOnDrag;
   final double initialRating;
   final double itemSize ;
 
   const AppRatingBar({
-    Key key,
+    Key? key,
     this.onRatingUpdate,
     this.updateOnDrag = false,
     this.initialRating = 0,

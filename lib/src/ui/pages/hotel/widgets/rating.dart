@@ -6,9 +6,9 @@ import '../../../components/progress.dart';
 import '../../../components/rating.dart';
 
 class RatingWidget extends StatelessWidget {
-  final Rating rating;
+  final Rating? rating;
 
-  const RatingWidget({Key key, @required this.rating}) : super(key: key);
+  const RatingWidget({Key? key, required this.rating}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Card(
@@ -24,7 +24,7 @@ class RatingWidget extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    '${rating.overallRating}',
+                    '${rating!.overallRating}',
                     style: AppStyles.titleStyle.copyWith(
                       color: Theme.of(context).primaryColor,
                       fontSize: 45,
@@ -40,7 +40,7 @@ class RatingWidget extends StatelessWidget {
                         height: 5,
                       ),
                       AppRatingBar(
-                        initialRating: rating.overallRating,
+                        initialRating: rating!.overallRating,
                       ),
                     ],
                   ),
@@ -49,19 +49,19 @@ class RatingWidget extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              _buildRatingProgress(context, 'Room', rating.room),
+              _buildRatingProgress(context, 'Room', rating!.room!),
               const SizedBox(
                 height: 10,
               ),
-              _buildRatingProgress(context, 'Service', rating.service),
+              _buildRatingProgress(context, 'Service', rating!.service!),
               const SizedBox(
                 height: 10,
               ),
-              _buildRatingProgress(context, 'Location', rating.location),
+              _buildRatingProgress(context, 'Location', rating!.location!),
               const SizedBox(
                 height: 10,
               ),
-              _buildRatingProgress(context, 'Price', rating.price),
+              _buildRatingProgress(context, 'Price', rating!.price!),
               const SizedBox(
                 height: 10,
               ),

@@ -4,9 +4,9 @@ import '../buttons/rounded_button.dart';
 import '../rooms.dart';
 
 class AppRoomsDialog extends StatefulWidget {
-  final Function(int, int, int) onSelectRooms;
+  final Function(int, int, int)? onSelectRooms;
 
-  const AppRoomsDialog({Key key, this.onSelectRooms}) : super(key: key);
+  const AppRoomsDialog({Key? key, this.onSelectRooms}) : super(key: key);
 
   @override
   _AppRoomsDialogState createState() => _AppRoomsDialogState();

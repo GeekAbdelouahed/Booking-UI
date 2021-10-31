@@ -10,20 +10,21 @@ extension StringExtensions on String {
 }
 
 extension BuildContextExtensions on BuildContext {
-  Future<T> showAppDialog<T>({
-    @required Widget child,
+  Future<T?> showAppDialog<T>({
+    required Widget child,
     bool isDismissible = true,
-  }) =>
-      showDialog(
-        context: this,
-        barrierDismissible: isDismissible,
-        builder: (_) => WillPopScope(
-          onWillPop: () async {
-            return isDismissible;
-          },
-          child: child,
-        ),
-      );
+  }) {
+    return showDialog(
+      context: this,
+      barrierDismissible: isDismissible,
+      builder: (_) => WillPopScope(
+        onWillPop: () async {
+          return isDismissible;
+        },
+        child: child,
+      ),
+    );
+  }
 }
 
 extension DateTimeExtensions on DateTime {

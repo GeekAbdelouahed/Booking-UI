@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 class ProgressWidget extends StatelessWidget {
   final double progress;
-  final double height;
-  final Color primaryColor;
+  final double? height;
+  final Color? primaryColor;
 
-  final Color secondaryColor;
-  final double radius;
+  final Color? secondaryColor;
+  final double? radius;
 
   const ProgressWidget({
-    Key key,
-    @required this.progress,
+    Key? key,
+    required this.progress,
     this.height,
     this.primaryColor,
     this.secondaryColor,

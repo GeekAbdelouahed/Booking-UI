@@ -4,11 +4,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'buttons/rounded_button.dart';
 
 class SocialWidget extends StatelessWidget {
-  final VoidCallback onPressedFacebook;
-  final VoidCallback onPressedGoogle;
+  final VoidCallback? onPressedFacebook;
+  final VoidCallback? onPressedGoogle;
 
   const SocialWidget({
-    Key key,
+    Key? key,
     this.onPressedFacebook,
     this.onPressedGoogle,
   }) : super(key: key);

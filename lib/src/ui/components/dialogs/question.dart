@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 
 class AppDialogQuestion extends StatelessWidget {
-  final String title;
+  final String? title;
   final String question;
-  final List<Widget> actions;
+  final List<Widget>? actions;
 
   const AppDialogQuestion({
-    Key key,
+    Key? key,
     this.title,
-    @required this.question,
+    required this.question,
     this.actions,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => SimpleDialog(
+  Widget build(BuildContext context) {
+    return SimpleDialog(
     contentPadding: const EdgeInsets.all(15),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10),
     ),
-    title: title != null ? Text(title) : const SizedBox(),
+    title: title != null ? Text(title!) : const SizedBox(),
     children: [
       Text(
         question,
@@ -30,8 +31,9 @@ class AppDialogQuestion extends StatelessWidget {
       if (actions != null)
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
-          children: actions,
+          children: actions!,
         ),
     ],
   );
+  }
 }

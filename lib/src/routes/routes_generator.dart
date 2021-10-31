@@ -102,7 +102,7 @@ abstract class AppRoutesGenerator {
     );
   }
 
-  static Widget _errorScreen(String route) => Scaffold(
+  static Widget _errorScreen(String? route) => Scaffold(
         body: Text('$route : Screen Not Found'),
       );
 }

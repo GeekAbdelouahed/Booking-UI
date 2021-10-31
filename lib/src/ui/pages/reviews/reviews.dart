@@ -7,7 +7,7 @@ import '../../components/review.dart';
 class ReviewsPage extends StatelessWidget {
   final Hotel hotel;
 
-  const ReviewsPage({Key key, @required this.hotel}) : super(key: key);
+  const ReviewsPage({Key? key, required this.hotel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -19,7 +19,7 @@ class ReviewsPage extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    'Reviews (${hotel.reviews.length})',
+                    'Reviews (${hotel.reviews!.length})',
                     style: AppStyles.titleStyle.copyWith(
                       fontSize: 20,
                     ),
@@ -41,7 +41,7 @@ class ReviewsPage extends StatelessWidget {
               child: ListView.separated(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                itemCount: hotel.reviews.length,
+                itemCount: hotel.reviews!.length,
                 itemBuilder: (_, index) => Column(
                   children: [
                     if (index == 0)
@@ -49,7 +49,7 @@ class ReviewsPage extends StatelessWidget {
                         color: Colors.grey[400],
                       ),
                     AppReviewWidget(
-                      review: hotel.reviews[index],
+                      review: hotel.reviews![index],
                     ),
                   ],
                 ),
