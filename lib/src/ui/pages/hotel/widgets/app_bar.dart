@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../entities/hotel.dart';
@@ -56,7 +55,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
               Positioned.fill(
                 child: PageView(
                   controller: _controller,
-                  children: widget.hotel.photos!
+                  children: widget.hotel.photos
                       .map((img) => AppImage(url: img))
                       .toList(),
                 ),
@@ -68,7 +67,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                 child: Center(
                   child: AppIndicator(
                     controller: _controller,
-                    count: widget.hotel.photos!.length,
+                    count: widget.hotel.photos.length,
                   ),
                 ),
               ),

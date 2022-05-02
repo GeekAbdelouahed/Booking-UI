@@ -1,6 +1,9 @@
 class Country {
-  final String? name;
+  final String name;
   final String? photo;
 
-  Country({this.name, this.photo});
+  Country({
+    required this.name,
+    this.photo,
+  });
 }

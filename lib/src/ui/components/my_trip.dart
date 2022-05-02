@@ -38,7 +38,7 @@ class MyTripItemWidget extends StatelessWidget {
                     children: [
                       Expanded(
                         child: AppImage(
-                          url: hotel.photos![0],
+                          url: hotel.photos[0],
                           width: double.infinity,
                         ),
                       ),
@@ -52,7 +52,7 @@ class MyTripItemWidget extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    hotel.title!,
+                                    hotel.title,
                                     style: AppStyles.titleStyle.copyWith(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w900,
@@ -62,7 +62,7 @@ class MyTripItemWidget extends StatelessWidget {
                                     height: 5,
                                   ),
                                   Text(
-                                    '${hotel.address!.city!.name}, ${hotel.address!.country!.name}',
+                                    '${hotel.address.city.name}, ${hotel.address.country.name}',
                                     style: AppStyles.subtitleStyle.copyWith(
                                       color: Colors.grey[400],
                                       fontSize: 13,
@@ -98,7 +98,7 @@ class MyTripItemWidget extends StatelessWidget {
                                     children: [
                                       AppRatingBar(
                                         initialRating:
-                                            hotel.rating!.overallRating,
+                                            hotel.rating.overallRating,
                                       ),
                                       const SizedBox(
                                         width: 10,

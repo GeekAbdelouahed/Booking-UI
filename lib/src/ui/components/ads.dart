@@ -18,7 +18,7 @@ class AdsItemWidget extends StatelessWidget {
           children: [
             Positioned.fill(
               child: AppImage(
-                url: hotel.photos![0],
+                url: hotel.photos[0],
               ),
             ),
             Positioned.fill(
@@ -35,7 +35,7 @@ class AdsItemWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    hotel.title!,
+                    hotel.title,
                     style: AppStyles.titleStyle.copyWith(
                       color: Colors.white,
                       fontSize: 35,
@@ -56,7 +56,7 @@ class AdsItemWidget extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    hotel.subtitle ?? ' ',
+                    hotel.subtitle,
                     style: AppStyles.subtitleStyle.copyWith(
                       color: Colors.grey[300],
                       fontSize: 18,

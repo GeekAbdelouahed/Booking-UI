@@ -49,19 +49,19 @@ class RatingWidget extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              _buildRatingProgress(context, 'Room', rating!.room!),
+              _buildRatingProgress(context, 'Room', rating!.room),
               const SizedBox(
                 height: 10,
               ),
-              _buildRatingProgress(context, 'Service', rating!.service!),
+              _buildRatingProgress(context, 'Service', rating!.service),
               const SizedBox(
                 height: 10,
               ),
-              _buildRatingProgress(context, 'Location', rating!.location!),
+              _buildRatingProgress(context, 'Location', rating!.location),
               const SizedBox(
                 height: 10,
               ),
-              _buildRatingProgress(context, 'Price', rating!.price!),
+              _buildRatingProgress(context, 'Price', rating!.price),
               const SizedBox(
                 height: 10,
               ),

@@ -58,7 +58,7 @@ class _BookPageState extends State<BookPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.hotel.title!),
+        title: Text(widget.hotel.title),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),

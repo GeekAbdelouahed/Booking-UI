@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -33,7 +31,7 @@ class _InformationWidgetState extends State<InformationWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        widget.hotel.title!,
+                        widget.hotel.title,
                         style: AppStyles.titleStyle,
                       ),
                       const SizedBox(
@@ -42,7 +40,7 @@ class _InformationWidgetState extends State<InformationWidget> {
                       Row(
                         children: [
                           Text(
-                            '${widget.hotel.address!.city!.name}, ${widget.hotel.address!.country!.name}',
+                            '${widget.hotel.address.city.name}, ${widget.hotel.address.country.name}',
                             style: AppStyles.subtitleStyle.copyWith(
                               color: Colors.grey[500],
                               fontSize: 13,
@@ -119,7 +117,7 @@ class _InformationWidgetState extends State<InformationWidget> {
             child: RichText(
               text: TextSpan(
                 text:
-                    '${widget.hotel.description!.substring(0, _isReadMore ? null : 100)} ${_isReadMore ? '' : '...'}',
+                    '${widget.hotel.description.substring(0, _isReadMore ? null : 100)} ${_isReadMore ? '' : '...'}',
                 style: TextStyle(
                   color: Colors.black87,
                 ),

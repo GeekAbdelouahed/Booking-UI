@@ -1,7 +1,11 @@
 class User {
-  final String? firstName;
-  final String? lastName;
-  final String? avatar;
+  final String firstName;
+  final String lastName;
+  final String avatar;
 
-  User({this.firstName, this.lastName, this.avatar});
+  User({
+    required this.firstName,
+    required this.lastName,
+    required this.avatar,
+  });
 }

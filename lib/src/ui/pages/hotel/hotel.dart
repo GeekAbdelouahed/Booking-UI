@@ -69,8 +69,8 @@ class HotelPage extends StatelessWidget {
                   bottom: 20,
                 ),
                 child: MapWidget(
-                  latitude: hotel.address!.latitude,
-                  longitude: hotel.address!.longitude,
+                  latitude: hotel.address.latitude,
+                  longitude: hotel.address.longitude,
                 ),
               ),
             ),

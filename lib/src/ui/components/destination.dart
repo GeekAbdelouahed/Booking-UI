@@ -35,7 +35,7 @@ class DestinationItemWidget extends StatelessWidget {
                 start: 20,
                 bottom: 20,
                 child: Text(
-                  country.name!,
+                  country.name,
                   style: AppStyles.titleStyle.copyWith(
                     color: Colors.white,
                     fontSize: 25,

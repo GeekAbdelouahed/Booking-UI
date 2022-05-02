@@ -40,8 +40,8 @@ class _MapWidgetState extends State<MapWidget> {
                         height: 50,
                         width: 50,
                         point: LatLng(
-                          hotel.address!.latitude!,
-                          hotel.address!.longitude!,
+                          hotel.address.latitude,
+                          hotel.address.longitude,
                         ),
                         builder: (_) => Card(
                           elevation: 10,
@@ -56,7 +56,7 @@ class _MapWidgetState extends State<MapWidget> {
                             ),
                           ),
                           child: AppImage(
-                            url: hotel.photos![0],
+                            url: hotel.photos[0],
                           ),
                         ),
                       ),
@@ -79,8 +79,8 @@ class _MapWidgetState extends State<MapWidget> {
                 final hotel = widget.hotels[index];
                 _controller.move(
                   LatLng(
-                    hotel.address!.latitude!,
-                    hotel.address!.longitude!,
+                    hotel.address.latitude,
+                    hotel.address.longitude,
                   ),
                   15,
                 );
